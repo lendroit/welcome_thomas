@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 export (int) var speed = 800
+export (int) var push = 100
 
 var velocity = Vector2.ZERO
 var item_held = null
@@ -40,4 +41,12 @@ func _drop_item():
 
 func _physics_process(delta):
 	get_input()
-	velocity = move_and_slide(velocity)
+	velocity = move_and_slide(velocity, Vector2.ZERO, false, 4, PI/4, false)
+	
+	for index in get_slide_count():
+		var collision = get_slide_collision(index)
+		print(collision)
+		print(collision.collider)
+		if collision.collider.get_collision_layer_bit(2):
+			collision.collider.apply_central_impulse(-collision.normal * push)
+			pass
