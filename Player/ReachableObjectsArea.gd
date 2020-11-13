@@ -14,7 +14,7 @@ func body_entered(body):
 func body_exited(body):
 	nearby_bodies.erase(body)
 	
-func pick_body():
+func get_item_if_any():
 	if(nearby_bodies.size() == 0):
 		return null
 	return nearby_bodies[0]
