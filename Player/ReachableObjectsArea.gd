@@ -8,7 +8,6 @@ func _ready():
 
 
 func body_entered(body):
-	print(body)
 	nearby_bodies.append(body)
 
 func body_exited(body):

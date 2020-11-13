@@ -3,17 +3,20 @@ extends KinematicBody2D
 export (int) var speed = 800
 
 var velocity = Vector2.ZERO
-var holding_item = false
+var item_held = null
 
 onready var reachableObjectsArea = $ReachableObjectsArea
 
 func get_input():
 	velocity.x = 0
 	velocity.y = 0
-	if Input.is_action_just_pressed("ui_accept") && !holding_item:
-		var reachable_item = reachableObjectsArea.get_item_if_any()
-		if reachable_item:
-			_pick_object(reachable_item)
+	if Input.is_action_just_pressed("ui_accept"):
+		if !item_held:
+			var reachable_item = reachableObjectsArea.get_item_if_any()
+			if reachable_item:
+				_pick_item(reachable_item)
+		else:
+			_drop_item()
 
 	if Input.is_action_pressed("ui_right"):
 		velocity.x += speed
@@ -24,10 +27,16 @@ func get_input():
 	if Input.is_action_pressed("ui_down"):
 		velocity.y += speed
 
-func _pick_object(item: Node2D):
-	holding_item = true
+func _pick_item(item: Node2D):
+	item_held = item
 	item.visible = false
-	print(item)
+
+func _drop_item():
+	item_held.position = position
+	item_held.visible = true
+	item_held = null
+
+
 
 func _physics_process(delta):
 	get_input()
