@@ -2,9 +2,9 @@ extends KinematicBody2D
 
 export (int) var speed = 800
 export (int) var push = 100
-const ACCELERATION = 5000
-const MAX_SPEED = 300
-const FRICTION = 10000
+var ACCELERATION = 7000
+var MAX_SPEED = 400
+var FRICTION = 10000
 
 var velocity = Vector2.ZERO
 var item_held = null
@@ -15,10 +15,16 @@ onready var animation_player = $AnimationPlayer
 signal player_won
 
 func _pick_item(item: Node2D):
+	ACCELERATION = 2500
+	MAX_SPEED = 200
+	FRICTION = 2000
 	item_held = item
 	item.visible = false
 
 func _drop_item():
+	ACCELERATION = 7000
+	MAX_SPEED = 400
+	FRICTION = 10000
 	item_held.position = position
 	item_held.visible = true
 	item_held = null

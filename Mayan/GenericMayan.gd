@@ -15,6 +15,7 @@ var MAX_DISTANCE = 30
 var MAX_ANGRINESS_BEFORE_ITS_TOO_LATE = 1.5
 var FRICTION = 0.3
 var SPEED = 50
+var CALM_DOWN = 0.995 # how fast they calm down wen angry from 1. to 0.
 
 var player
 
@@ -46,7 +47,7 @@ func _get_angriness(state):
 
 	#if distance_to_initial_position < ACCEPTABLE_DISTANCE*2.0:
 	if angriness <MAX_ANGRINESS_BEFORE_ITS_TOO_LATE:
-		furthest_distance_ever *= 0.995
+		furthest_distance_ever *= CALM_DOWN
 		
 func _turn_color(state):
 	self.modulate.g = 1.0 - min(1.0, angriness)
