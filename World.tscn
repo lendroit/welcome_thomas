@@ -23,7 +23,7 @@ position = Vector2( 493.198, 1043.59 )
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Node2D" type="YSort" parent="."]
 
 [node name="Mayan2" parent="Node2D" instance=ExtResource( 4 )]
 position = Vector2( 904.588, 508.468 )
