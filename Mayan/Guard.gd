@@ -14,8 +14,9 @@ func _init():
 
 
 func _timeout():
-	throw_spear()
-	print("Timed out!")
+	if angriness > MAX_ANGRINESS_BEFORE_ITS_TOO_LATE:
+		throw_spear()
+
 
 
 func _ready():
