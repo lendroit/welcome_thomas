@@ -7,10 +7,22 @@ onready var playerWonLabel = $Gui/PlayerWonLabel
 onready var replayButton = $Gui/PlayerWonLabel/Button
 
 var number_of_angry_mayans = 0
+var number_of_guards = 0
+
+signal guard_is_trigered
 
 func _on_new_angry_mayan():
 	number_of_angry_mayans += 1
 	print(number_of_angry_mayans)
+	if number_of_angry_mayans%5 == 0:
+		for child in mayans.get_children():
+			if (child.isGuard) and (child.angriness < child.MAX_ANGRINESS_BEFORE_ITS_TOO_LATE):
+				child.angriness = 2.0
+				child.furthest_distance_ever = 50000
+				break
+				
+		emit_signal("guard_is_trigered")
+		print("guard pas content")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,7 +33,10 @@ func _ready():
 		var maya = child as GenericMayan
 		maya.connect("got_angry", self, "_on_new_angry_mayan")
 		maya.player = player
-
+	for child in mayans.get_children():
+		if child.isGuard:
+			number_of_guards += 1
+	
 func _body_entered_drop_zone(body):
 	if(body == player):
 		print("This is the player")

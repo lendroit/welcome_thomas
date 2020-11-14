@@ -7,6 +7,7 @@ var angriness = 0.0 # how mad they are, from 0.0 to 2.0
 var furthest_distance_ever = 0.0
 var distance_to_initial_position = 0.0
 
+var isGuard := false
 signal got_angry
 
 var ACCEPTABLE_DISTANCE = 0 # max distance before mayans get angry
@@ -40,8 +41,6 @@ func _get_angriness(state):
 	var new_angriness = max(0.0, min(2.0, 1.0*(furthest_distance_ever - ACCEPTABLE_DISTANCE) / (MAX_DISTANCE - ACCEPTABLE_DISTANCE)))
 	if (angriness < MAX_ANGRINESS_BEFORE_ITS_TOO_LATE) and (new_angriness > MAX_ANGRINESS_BEFORE_ITS_TOO_LATE):
 		emit_signal("got_angry")
-#		get_parent().number_of_angry_mayans += 1
-#		print(get_parent().number_of_angry_mayans)
 	angriness = new_angriness
 
 	#if distance_to_initial_position < ACCEPTABLE_DISTANCE*2.0:
