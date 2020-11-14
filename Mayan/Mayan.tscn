@@ -21,11 +21,11 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="." groups=[
 "bodies",
 ]]
-position = Vector2( -9.3773, -41.8651 )
+position = Vector2( -10.1008, -68.9966 )
 scale = Vector2( 0.300781, 0.300781 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 1.08527, 10.8526 )
+position = Vector2( -0.361751, -5.06451 )
 rotation = 1.5708
 shape = SubResource( 2 )
