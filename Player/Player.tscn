@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/ReachableObjectsArea.gd" type="Script" id=3]
@@ -136,6 +136,130 @@ tracks/9/keys = {
 "values": [ -76.7958, -66.0744 ]
 }
 
+[sub_resource type="Animation" id=4]
+resource_name = "BearWalks"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Polygons/LegL:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -45.0068, -103.251 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Polygons/LegL:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 8.18528, 48.5671 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Polygons/ArmR:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 54.3466, -271.962 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Polygons/ArmR:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -66.0744, -189.244 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Polygons/LegR:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 46.9924, -109.87 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Polygons/LegR:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -7.65159, -59.2548 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Polygons/Body:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1.32375, 13.8992 ), Vector2( -5.11765, -10.761 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Polygons/Body:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 2.05817 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Polygons/ArmL:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -57.82, -276.52 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Polygons/ArmL:rotation_degrees")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 70.5974, 178.987 ]
+}
+
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
@@ -144,7 +268,7 @@ scale = Vector2( 0.3, 0.3 )
 
 [node name="LegR" type="Node2D" parent="Polygons"]
 position = Vector2( 46.9924, -109.87 )
-rotation = -0.133546
+rotation = -0.0801273
 
 [node name="LegR" type="Polygon2D" parent="Polygons/LegR"]
 position = Vector2( -431.351, -456.325 )
@@ -154,7 +278,7 @@ uv = PoolVector2Array( 481.646, 423.451, 427.221, 426.106, 398.903, 462.832, 393
 
 [node name="LegL" type="Node2D" parent="Polygons"]
 position = Vector2( -45.0068, -103.251 )
-rotation = 0.14286
+rotation = 0.085716
 
 [node name="LegL" type="Polygon2D" parent="Polygons/LegL"]
 position = Vector2( -138.41, -462.975 )
@@ -163,7 +287,7 @@ polygon = PoolVector2Array( 83.8584, 428.319, 81.646, 485.841, 92.708, 546.46, 9
 uv = PoolVector2Array( 83.8584, 428.319, 81.646, 485.841, 92.708, 546.46, 98.2448, 561.445, 115.26, 567.117, 156.155, 567.117, 173.239, 544.248, 171.027, 461.947, 137.398, 422.566 )
 
 [node name="Body" type="Node2D" parent="Polygons"]
-position = Vector2( -1.32375, 13.8992 )
+position = Vector2( -0.79425, 8.33949 )
 
 [node name="Body" type="Polygon2D" parent="Polygons/Body"]
 position = Vector2( -283.504, -569.325 )
@@ -172,8 +296,8 @@ polygon = PoolVector2Array( 138.637, 22.1239, 173.15, 134.956, 212.531, 178.761,
 uv = PoolVector2Array( 138.637, 22.1239, 173.15, 134.956, 212.531, 178.761, 175.805, 428.319, 211.646, 492.478, 291.292, 516.372, 382.443, 467.699, 387.752, 392.92, 351.027, 181.858, 375.044, 36.4009, 364.727, -1.34546, 208.364, 8.2 )
 
 [node name="ArmR" type="Node2D" parent="Polygons"]
-position = Vector2( 54.3466, -271.962 )
-rotation = -1.15322
+position = Vector2( 53.1106, -276.906 )
+rotation = -1.22807
 
 [node name="ArmL" type="Polygon2D" parent="Polygons/ArmR"]
 position = Vector2( -149.304, -283.228 )
@@ -183,8 +307,8 @@ uv = PoolVector2Array( 143.947, 261.947, 41.7345, 334.956, -2.51328, 360.62, 11.
 bones = [ NodePath("Hip"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("Hip/Torso"), PoolRealArray( 1, 0.47, 0, 0, 0, 0.47, 1, 1, 1 ), NodePath("Hip/Torso/ArmL"), PoolRealArray( 0, 1, 1, 1, 1, 1, 0, 0, 0 ), NodePath("Hip/Torso/ArmR"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("Hip/LegL"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("Hip/LegR"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
 
 [node name="ArmL" type="Node2D" parent="Polygons"]
-position = Vector2( -57.82, -276.52 )
-rotation = 1.23216
+position = Vector2( -57.3256, -281.217 )
+rotation = 1.28314
 
 [node name="ArmR" type="Polygon2D" parent="Polygons/ArmL"]
 position = Vector2( -410.845, -285.56 )
@@ -211,3 +335,4 @@ shape = SubResource( 2 )
 autoplay = "BearIdle"
 method_call_mode = 1
 anims/BearIdle = SubResource( 3 )
+anims/BearWalks = SubResource( 4 )

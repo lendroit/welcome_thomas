@@ -10,6 +10,7 @@ var velocity = Vector2.ZERO
 var item_held = null
 
 onready var reachableObjectsArea = $ReachableObjectsArea
+onready var animation_player = $AnimationPlayer
 
 signal player_won
 
@@ -48,8 +49,10 @@ func _physics_process(delta):
 
 	if input_vector != Vector2.ZERO:
 		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
+		animation_player.play("BearWalks")
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
+		animation_player.play("BearIdle")
 	
 	velocity = move_and_slide(velocity, Vector2.ZERO, false, 4, PI / 4, false)
 	
