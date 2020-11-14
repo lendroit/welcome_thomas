@@ -12,6 +12,7 @@ var is_dead = false
 
 onready var reachableObjectsArea = $ReachableObjectsArea
 onready var animation_player = $AnimationPlayer
+onready var picked_offrande = $PickedOffrande
 
 signal player_won
 signal player_died
@@ -25,6 +26,7 @@ func _pickable_item_entered_area(item):
 
 func _pick_item(item: Node2D):
 	emit_signal("player_picked")
+	picked_offrande.visible = true
 	ACCELERATION = 2500
 	MAX_SPEED = 200
 	FRICTION = 2000
@@ -32,6 +34,7 @@ func _pick_item(item: Node2D):
 	item.visible = false
 
 func _drop_item():
+	picked_offrande.visible = false
 	ACCELERATION = 7000
 	MAX_SPEED = 400
 	FRICTION = 10000
