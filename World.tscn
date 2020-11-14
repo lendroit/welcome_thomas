@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Items/Autel.tscn" type="PackedScene" id=5]
 [ext_resource path="res://TileMap/TileMap.tscn" type="PackedScene" id=6]
 [ext_resource path="res://TileMap/Tree.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Mayan/Guard.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -310,6 +311,12 @@ position = Vector2( 644.342, 604.426 )
 
 [node name="Mayan62" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 707.963, 615.608 )
+
+[node name="Guard" parent="Mayans" instance=ExtResource( 8 )]
+position = Vector2( 627.402, 274.348 )
+
+[node name="Guard2" parent="Mayans" instance=ExtResource( 8 )]
+position = Vector2( 298.816, 270.843 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
