@@ -45,8 +45,6 @@ func _physics_process(delta):
 	
 	for index in get_slide_count():
 		var collision = get_slide_collision(index)
-		print(collision)
-		print(collision.collider)
 		if collision.collider.get_collision_layer_bit(2):
 			collision.collider.apply_central_impulse(-collision.normal * push)
 			pass

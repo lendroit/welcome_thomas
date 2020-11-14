@@ -20,4 +20,13 @@ position = Vector2( 355.027, 311.751 )
 position = Vector2( 259.659, 319.765 )
 
 [node name="Mayan2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 664.857, 471.652 )
+position = Vector2( 904.588, 508.468 )
+
+[node name="Mayan3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 785.579, 445.967 )
+
+[node name="Mayan4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 640.028, 446.823 )
+
+[node name="Mayan5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 642.596, 320.964 )
