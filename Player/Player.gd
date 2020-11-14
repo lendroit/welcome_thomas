@@ -17,6 +17,12 @@ signal player_won
 signal player_died
 signal player_picked
 
+func _ready():
+	reachableObjectsArea.connect("body_entered", self, "_pickable_item_entered_area")
+
+func _pickable_item_entered_area(item):
+	_pick_item(item)
+
 func _pick_item(item: Node2D):
 	emit_signal("player_picked")
 	ACCELERATION = 2500
@@ -39,6 +45,7 @@ func has_entered_drop_area():
 		emit_signal("player_won")
 
 func has_been_hit(body):
+	body.queue_free()
 	_die()
 
 func _die():
@@ -47,16 +54,6 @@ func _die():
 		is_dead = true
 		emit_signal("player_died")
 
-func _input(event):
-	if is_dead:
-		return
-	if event.is_action_pressed("ui_accept"):
-		if !item_held:
-			var reachable_item = reachableObjectsArea.get_item_if_any()
-			if reachable_item:
-				_pick_item(reachable_item)
-		else:
-			_drop_item()
 
 func _physics_process(delta):
 	if is_dead:
