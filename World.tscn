@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://World.gd" type="Script" id=2]
 [ext_resource path="res://Items/Offrande.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Mayan/Mayan.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Items/Autel.tscn" type="PackedScene" id=5]
 [ext_resource path="res://TileMap/TileMap.tscn" type="PackedScene" id=6]
 
 [node name="World" type="YSort"]
+script = ExtResource( 2 )
 
 [node name="Background" parent="." instance=ExtResource( 6 )]
 tile_data = PoolIntArray( 0, 1, 0, 1, 1, 1, 2, 1, 1, 3, 1, 1, 4, 1, 1, 5, 1, 1, 6, 1, 1, 7, 1, 1, 8, 1, 1, 9, 1, 1, 10, 1, 1, 11, 1, 1, 12, 1, 1, 13, 1, 1, 14, 1, 1, 15, 1, 2, 65536, 1, 65536, 65537, 1, 65537, 65538, 1, 65537, 65539, 1, 65537, 65540, 1, 65537, 65541, 1, 65537, 65542, 1, 65537, 65543, 1, 65537, 65544, 1, 65537, 65545, 1, 65537, 65546, 1, 65537, 65547, 1, 65537, 65548, 1, 65537, 65549, 1, 65537, 65550, 1, 65537, 65551, 1, 65538, 131072, 1, 65536, 131073, 1, 65537, 131074, 1, 65537, 131075, 1, 65537, 131076, 1, 65537, 131077, 1, 65537, 131078, 1, 65537, 131079, 1, 65537, 131080, 1, 65537, 131081, 1, 65537, 131082, 1, 65537, 131083, 1, 65537, 131084, 1, 65537, 131085, 1, 65537, 131086, 1, 65537, 131087, 1, 65538, 196608, 1, 65536, 196609, 1, 65537, 196610, 1, 65537, 196611, 1, 65537, 196612, 1, 65537, 196613, 1, 65537, 196614, 1, 65537, 196615, 1, 65537, 196616, 1, 65537, 196617, 1, 65537, 196618, 1, 65537, 196619, 1, 65537, 196620, 1, 65537, 196621, 1, 65537, 196622, 1, 65537, 196623, 1, 65538, 262144, 1, 65536, 262145, 1, 65537, 262146, 1, 65537, 262147, 1, 65537, 262148, 1, 65537, 262149, 1, 65537, 262150, 1, 65537, 262151, 1, 65537, 262152, 1, 65537, 262153, 1, 65537, 262154, 1, 65537, 262155, 1, 65537, 262156, 1, 65537, 262157, 1, 65537, 262158, 1, 65537, 262159, 1, 65538, 327680, 1, 65536, 327681, 1, 65537, 327682, 1, 65537, 327683, 1, 65537, 327684, 1, 65537, 327685, 1, 65537, 327686, 1, 65537, 327687, 1, 65537, 327688, 1, 65537, 327689, 1, 65537, 327690, 1, 65537, 327691, 1, 65537, 327692, 1, 65537, 327693, 1, 65537, 327694, 1, 65537, 327695, 1, 65538, 393216, 1, 65536, 393217, 1, 65537, 393218, 1, 65537, 393219, 1, 65537, 393220, 1, 65537, 393221, 1, 65537, 393222, 1, 65537, 393223, 1, 65537, 393224, 1, 65537, 393225, 1, 65537, 393226, 1, 65537, 393227, 1, 65537, 393228, 1, 65537, 393229, 1, 65537, 393230, 1, 65537, 393231, 1, 65538, 393234, 2, 0, 393235, 2, 0, 393236, 2, 0, 458752, 1, 65536, 458753, 1, 65537, 458754, 1, 65537, 458755, 1, 65537, 458756, 1, 65537, 458757, 1, 65537, 458758, 1, 65537, 458759, 1, 65537, 458760, 1, 65537, 458761, 1, 65537, 458762, 1, 65537, 458763, 1, 65537, 458764, 1, 65537, 458765, 1, 65537, 458766, 1, 65537, 458767, 1, 65538, 458770, 2, 0, 458771, 2, 0, 458772, 2, 0, 524288, 1, 65536, 524289, 1, 65537, 524290, 1, 65537, 524291, 1, 65537, 524292, 1, 65537, 524293, 1, 65537, 524294, 1, 65537, 524295, 1, 65537, 524296, 1, 65537, 524297, 1, 65537, 524298, 1, 65537, 524299, 1, 65537, 524300, 1, 65537, 524301, 1, 65537, 524302, 1, 65537, 524303, 1, 65538, 524306, 2, 0, 524307, 2, 0, 524308, 2, 0, 589824, 1, 65536, 589825, 1, 65537, 589826, 1, 65537, 589827, 1, 65537, 589828, 1, 65537, 589829, 1, 65537, 589830, 1, 65537, 589831, 1, 65537, 589832, 1, 65537, 589833, 1, 65537, 589834, 1, 65537, 589835, 1, 65537, 589836, 1, 65537, 589837, 1, 65537, 589838, 1, 65537, 589839, 1, 65538, 589842, 2, 0, 589843, 2, 0, 589844, 2, 0, 655360, 1, 65536, 655361, 1, 65537, 655362, 1, 65537, 655363, 1, 65537, 655364, 1, 65537, 655365, 1, 65537, 655366, 1, 65537, 655367, 1, 65537, 655368, 1, 65537, 655369, 1, 65537, 655370, 1, 65537, 655371, 1, 65537, 655372, 1, 65537, 655373, 1, 65537, 655374, 1, 65537, 655375, 1, 65538, 720896, 1, 65536, 720897, 1, 65537, 720898, 1, 65537, 720899, 1, 65537, 720900, 1, 65537, 720901, 1, 65537, 720902, 1, 65537, 720903, 1, 65537, 720904, 1, 65537, 720905, 1, 65537, 720906, 1, 65537, 720907, 1, 65537, 720908, 1, 65537, 720909, 1, 65537, 720910, 1, 65537, 720911, 1, 65538, 786432, 1, 65536, 786433, 1, 65537, 786434, 1, 65537, 786435, 1, 65537, 786436, 1, 65537, 786437, 1, 65537, 786438, 1, 65537, 786439, 1, 65537, 786440, 1, 65537, 786441, 1, 65537, 786442, 1, 65537, 786443, 1, 65537, 786444, 1, 65537, 786445, 1, 65537, 786446, 1, 65537, 786447, 1, 65538, 851968, 1, 65536, 851969, 1, 65537, 851970, 1, 65537, 851971, 1, 65537, 851972, 1, 65537, 851973, 1, 65537, 851974, 1, 65537, 851975, 1, 65537, 851976, 1, 65537, 851977, 1, 65537, 851978, 1, 65537, 851979, 1, 65537, 851980, 1, 65537, 851981, 1, 65537, 851982, 1, 65537, 851983, 1, 65538, 917504, 1, 65536, 917505, 1, 65537, 917506, 1, 65537, 917507, 1, 65537, 917508, 1, 65537, 917509, 1, 65537, 917510, 1, 65537, 917511, 1, 65537, 917512, 1, 65537, 917513, 1, 65537, 917514, 1, 65537, 917515, 1, 65537, 917516, 1, 65537, 917517, 1, 65537, 917518, 1, 65537, 917519, 1, 65538, 983040, 1, 65536, 983041, 1, 65537, 983042, 1, 65537, 983043, 1, 65537, 983044, 1, 65537, 983045, 1, 65537, 983046, 1, 65537, 983047, 1, 65537, 983048, 1, 65537, 983049, 1, 65537, 983050, 1, 65537, 983051, 1, 65537, 983052, 1, 65537, 983053, 1, 65537, 983054, 1, 65537, 983055, 1, 65538, 1048576, 1, 65536, 1048577, 1, 65537, 1048578, 1, 65537, 1048579, 1, 65537, 1048580, 1, 65537, 1048581, 1, 65537, 1048582, 1, 65537, 1048583, 1, 65537, 1048584, 1, 65537, 1048585, 1, 65537, 1048586, 1, 65537, 1048587, 1, 65537, 1048588, 1, 65537, 1048589, 1, 65537, 1048590, 1, 65537, 1048591, 1, 65538, 1114112, 1, 65536, 1114113, 1, 65537, 1114114, 1, 65537, 1114115, 1, 65537, 1114116, 1, 65537, 1114117, 1, 65537, 1114118, 1, 65537, 1114119, 1, 65537, 1114120, 1, 65537, 1114121, 1, 65537, 1114122, 1, 65537, 1114123, 1, 65537, 1114124, 1, 65537, 1114125, 1, 65537, 1114126, 1, 65537, 1114127, 1, 65538, 1179648, 1, 131072, 1179649, 1, 131073, 1179650, 1, 131073, 1179651, 1, 131073, 1179652, 1, 131073, 1179653, 1, 131073, 1179654, 1, 131073, 1179655, 1, 131073, 1179656, 1, 131073, 1179657, 1, 131073, 1179658, 1, 131073, 1179659, 1, 131073, 1179660, 1, 131073, 1179661, 1, 131073, 1179662, 1, 131073, 1179663, 1, 131074 )
@@ -26,211 +28,211 @@ position = Vector2( 493.198, 1043.59 )
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
 
-[node name="Node2D" type="YSort" parent="."]
+[node name="Mayans" type="YSort" parent="."]
 
-[node name="Mayan2" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan2" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 904.588, 508.468 )
 
-[node name="Mayan3" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan3" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 785.579, 445.967 )
 
-[node name="Mayan4" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan4" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 640.028, 446.823 )
 
-[node name="Mayan5" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan5" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 379.134, 461.477 )
 
-[node name="Mayan6" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan6" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 177.732, 317.451 )
 
-[node name="Mayan7" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan7" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 158.997, 504.802 )
 
-[node name="Mayan8" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan8" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 258.527, 635.947 )
 
-[node name="Mayan9" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan9" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 424.801, 601.99 )
 
-[node name="Mayan10" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan10" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 593.416, 585.597 )
 
-[node name="Mayan11" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan11" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 753.835, 579.742 )
 
-[node name="Mayan12" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan12" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 856.878, 702.691 )
 
-[node name="Mayan13" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan13" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 658.989, 815.101 )
 
-[node name="Mayan14" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan14" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 423.63, 789.341 )
 
-[node name="Mayan15" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan15" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 208.177, 774.118 )
 
-[node name="Mayan16" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan16" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 862.733, 838.52 )
 
-[node name="Mayan17" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan17" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 881.86, 294.033 )
 
-[node name="Mayan18" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan18" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 709.505, 322.952 )
 
-[node name="Mayan19" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan19" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 567.611, 442.867 )
 
-[node name="Mayan20" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan20" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 711.433, 444.024 )
 
-[node name="Mayan21" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan21" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 858.34, 451.736 )
 
-[node name="Mayan22" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan22" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 661.693, 509.187 )
 
-[node name="Mayan23" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan23" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 594.216, 502.247 )
 
-[node name="Mayan24" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan24" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 506.304, 499.934 )
 
-[node name="Mayan25" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan25" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 466.203, 446.338 )
 
-[node name="Mayan26" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan26" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 420.705, 499.548 )
 
-[node name="Mayan27" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan27" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 340.504, 517.285 )
 
-[node name="Mayan28" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan28" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 287.293, 467.93 )
 
-[node name="Mayan29" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan29" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 258.76, 522.683 )
 
-[node name="Mayan30" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan30" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 208.635, 470.244 )
 
-[node name="Mayan31" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan31" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 195.911, 545.047 )
 
-[node name="Mayan32" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan32" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 104.528, 472.943 )
 
-[node name="Mayan33" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan33" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 114.939, 554.3 )
 
-[node name="Mayan34" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan34" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 159.28, 596.714 )
 
-[node name="Mayan35" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan35" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 232.541, 584.761 )
 
-[node name="Mayan36" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan36" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 306.958, 564.711 )
 
-[node name="Mayan37" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan37" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 378.676, 579.363 )
 
-[node name="Mayan38" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan38" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 421.09, 550.444 )
 
-[node name="Mayan39" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan39" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 461.962, 522.297 )
 
-[node name="Mayan40" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan40" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 552.188, 539.263 )
 
-[node name="Mayan41" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan41" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 620.05, 542.347 )
 
-[node name="Mayan42" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan42" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 726.471, 499.548 )
 
-[node name="Mayan43" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan43" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 796.261, 499.933 )
 
-[node name="Mayan44" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan44" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 851.785, 526.924 )
 
-[node name="Mayan45" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan45" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 905.38, 565.868 )
 
-[node name="Mayan46" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan46" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 839.832, 576.664 )
 
-[node name="Mayan47" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan47" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 796.261, 543.889 )
 
-[node name="Mayan48" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan48" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 726.856, 541.961 )
 
-[node name="Mayan49" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan49" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 673.646, 556.228 )
 
-[node name="Mayan50" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan50" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 485.868, 567.41 )
 
-[node name="Mayan51" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan51" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 485.868, 567.41 )
 
-[node name="Mayan52" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan52" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 314.284, 617.15 )
 
-[node name="Mayan53" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan53" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 194.754, 639.899 )
 
-[node name="Mayan54" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan54" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 108.769, 654.551 )
 
-[node name="Mayan63" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan63" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 773.126, 625.633 )
 
-[node name="Mayan64" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan64" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 795.875, 591.702 )
 
-[node name="Mayan65" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan65" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 882.246, 610.21 )
 
-[node name="Mayan66" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan66" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 823.637, 643.37 )
 
-[node name="Mayan67" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan67" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 884.174, 660.721 )
 
-[node name="Mayan68" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan68" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 925.816, 616.379 )
 
-[node name="Mayan69" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan69" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 933.142, 685.012 )
 
-[node name="Mayan70" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan70" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 933.142, 685.012 )
 
-[node name="Mayan55" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan55" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 158.123, 693.881 )
 
-[node name="Mayan56" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan56" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 252.591, 681.157 )
 
-[node name="Mayan57" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan57" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 330.864, 670.746 )
 
-[node name="Mayan58" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan58" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 388.701, 646.454 )
 
-[node name="Mayan59" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan59" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 480.855, 622.163 )
 
-[node name="Mayan60" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan60" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 537.536, 603.269 )
 
-[node name="Mayan61" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan61" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 644.342, 604.426 )
 
-[node name="Mayan62" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Mayan62" parent="Mayans" instance=ExtResource( 4 )]
 position = Vector2( 707.963, 615.608 )
