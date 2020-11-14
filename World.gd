@@ -39,12 +39,10 @@ func _ready():
 	
 func _body_entered_drop_zone(body):
 	if(body == player):
-		print("This is the player")
 		player.has_entered_drop_area()
 
 func _player_won():
 	playerWonLabel.visible = true
-	print("player won")
 
 func _restart_game():
 	get_tree().reload_current_scene()

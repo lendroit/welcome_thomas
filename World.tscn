@@ -323,6 +323,9 @@ position = Vector2( 627.402, 274.348 )
 [node name="Guard2" parent="Mayans" instance=ExtResource( 8 )]
 position = Vector2( 298.816, 270.843 )
 
+[node name="Guard3" parent="Mayans" instance=ExtResource( 8 )]
+position = Vector2( 197.615, 1109.16 )
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
 
