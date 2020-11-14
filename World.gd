@@ -3,7 +3,7 @@ extends YSort
 onready var player = $Player
 onready var mayans = $Mayans
 onready var dropOffrandeArea = $DropOffrandeArea
-onready var playerWonLabel = $CanvasLayer/PlayerWonLabel
+onready var playerWonLabel = $Gui/PlayerWonLabel
 
 
 # Called when the node enters the scene tree for the first time.
