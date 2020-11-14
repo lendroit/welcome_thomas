@@ -35,10 +35,15 @@ func _get_distance_to_initial_position(state):
 		furthest_distance_ever = distance_to_initial_position
 	
 func _get_angriness(state):
-	angriness = max(0.0, min(2.0, 1.0*(furthest_distance_ever - ACCEPTABLE_DISTANCE) / (MAX_DISTANCE - ACCEPTABLE_DISTANCE)))
+	var new_angriness = max(0.0, min(2.0, 1.0*(furthest_distance_ever - ACCEPTABLE_DISTANCE) / (MAX_DISTANCE - ACCEPTABLE_DISTANCE)))
+#	if (angriness < MAX_ANGRINESS_BEFORE_ITS_TOO_LATE) and (new_angriness > MAX_ANGRINESS_BEFORE_ITS_TOO_LATE):
+#		get_parent().number_of_angry_mayans += 1
+#		print(get_parent().number_of_angry_mayans)
+	angriness = new_angriness
+
 	#if distance_to_initial_position < ACCEPTABLE_DISTANCE*2.0:
 	if angriness <MAX_ANGRINESS_BEFORE_ITS_TOO_LATE:
-		furthest_distance_ever *= 0.999
+		furthest_distance_ever *= 0.995
 		
 func _turn_color(state):
 	self.modulate.g = 1.0 - min(1.0, angriness)
@@ -54,7 +59,6 @@ func _go_back_to_original_position_force(state):
 	
 	if distance_to_initial_position > ACCEPTABLE_DISTANCE/2.0:
 		state.apply_central_impulse(direction_towards_initial_position * distance_to_initial_position * min(1.0, angriness))
-
 	else:
 		return null
 

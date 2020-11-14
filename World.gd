@@ -5,6 +5,7 @@ onready var mayans = $Mayans
 onready var dropOffrandeArea = $DropOffrandeArea
 onready var playerWonLabel = $Gui/PlayerWonLabel
 
+var number_of_angry_mayans = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
