@@ -45,6 +45,7 @@ func has_entered_drop_area():
 		emit_signal("player_won")
 
 func has_been_hit(body):
+	body.queue_free()
 	_die()
 
 func _die():
