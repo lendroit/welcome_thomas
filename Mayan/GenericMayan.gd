@@ -26,7 +26,7 @@ func _integrate_forces(state):
 	_get_distance_to_initial_position(state)
 	_friction_force(state)
 	_get_angriness(state)
-	_turn_color(state)
+
 	
 	if angriness < MAX_ANGRINESS_BEFORE_ITS_TOO_LATE:
 		_go_back_to_original_position_force(state)
@@ -41,9 +41,14 @@ func _get_distance_to_initial_position(state):
 	
 func _get_angriness(state):
 	var new_angriness = max(0.0, min(2.0, 1.0*(furthest_distance_ever - ACCEPTABLE_DISTANCE) / (MAX_DISTANCE - ACCEPTABLE_DISTANCE)))
+	
+	if new_angriness == angriness:
+		return
+	
 	if (angriness < MAX_ANGRINESS_BEFORE_ITS_TOO_LATE) and (new_angriness > MAX_ANGRINESS_BEFORE_ITS_TOO_LATE):
 		emit_signal("got_angry")
 	angriness = new_angriness
+	_turn_color(state)
 
 	#if distance_to_initial_position < ACCEPTABLE_DISTANCE*2.0:
 	if angriness <MAX_ANGRINESS_BEFORE_ITS_TOO_LATE:
