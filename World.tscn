@@ -13,9 +13,6 @@ tile_data = PoolIntArray( 0, 2, 65539, 1, 2, 65539, 2, 2, 65539, 3, 2, 65539, 4,
 [node name="Barrel" parent="." instance=ExtResource( 3 )]
 position = Vector2( 207.567, 200.354 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 355.027, 311.751 )
-
 [node name="Barrel2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 259.659, 319.765 )
 
@@ -30,3 +27,6 @@ position = Vector2( 640.028, 446.823 )
 
 [node name="Mayan5" parent="." instance=ExtResource( 4 )]
 position = Vector2( 642.596, 320.964 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 355.027, 311.751 )
