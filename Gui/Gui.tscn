@@ -20,3 +20,13 @@ uppercase = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Button" type="Button" parent="PlayerWonLabel"]
+margin_left = 460.236
+margin_top = 353.396
+margin_right = 521.236
+margin_bottom = 373.396
+text = "Rejouer"
+__meta__ = {
+"_edit_use_anchors_": false
+}
