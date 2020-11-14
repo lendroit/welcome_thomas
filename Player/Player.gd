@@ -29,8 +29,11 @@ func has_entered_drop_area():
 		emit_signal("player_won")
 
 func has_been_hit(body):
-	print("spear !")
-	print(body)
+	print("Oh je suis touchey")
+	_die()
+
+func _die():
+	queue_free()
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
