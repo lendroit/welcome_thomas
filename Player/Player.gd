@@ -2,9 +2,9 @@ extends KinematicBody2D
 
 export (int) var speed = 800
 export (int) var push = 100
-const ACCELERATION = 500
-const MAX_SPEED = 1000
-const FRICTION = 1000
+const ACCELERATION = 5000
+const MAX_SPEED = 300
+const FRICTION = 10000
 
 var velocity = Vector2.ZERO
 var item_held = null
@@ -48,7 +48,7 @@ func _physics_process(delta):
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	
-	velocity = move_and_slide(velocity)
+	velocity = move_and_slide(velocity, Vector2.ZERO, false, 4, PI / 4, false)
 	
 	for index in get_slide_count():
 		var collision = get_slide_collision(index)
