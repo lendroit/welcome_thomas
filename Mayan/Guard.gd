@@ -33,6 +33,4 @@ func throw_spear():
 	b.position = self.global_position
 	b.rotation = direction_towards_player.angle()
 	get_node("/root/World").add_child(b)
-	print("b")
-	print(b.position)
 	pass
