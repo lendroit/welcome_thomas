@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Items/Saucisse_001.png" type="Texture" id=1]
-[ext_resource path="res://Items/autel.png" type="Texture" id=2]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends KinematicBody2D
@@ -22,8 +21,9 @@ func _ready():
 #	pass
 "
 
-[sub_resource type="CircleShape2D" id=2]
-radius = 24.0
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 95.6111
+height = 75.4203
 
 [node name="Offrande" type="KinematicBody2D"]
 collision_layer = 0
@@ -31,14 +31,12 @@ collision_mask = 2
 script = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.616394, -42.5314 )
+rotation = 1.5708
+scale = Vector2( 0.92, 1 )
 shape = SubResource( 2 )
 
-[node name="autel" type="Sprite" parent="."]
-position = Vector2( -3.19009, -26.6636 )
-scale = Vector2( 0.563383, 0.563383 )
-texture = ExtResource( 2 )
-
 [node name="Saucisse_001" type="Sprite" parent="."]
-position = Vector2( 2.25937, -95.1713 )
+position = Vector2( -0.206208, -89.9264 )
 scale = Vector2( 0.46178, 0.46178 )
 texture = ExtResource( 1 )
