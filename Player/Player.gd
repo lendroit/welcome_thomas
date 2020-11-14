@@ -17,6 +17,13 @@ signal player_won
 signal player_died
 signal player_picked
 
+func _ready():
+	reachableObjectsArea.connect("body_entered", self, "_pickable_item_entered_area")
+
+func _pickable_item_entered_area(item):
+	print("Yolo")
+	print(item)
+
 func _pick_item(item: Node2D):
 	emit_signal("player_picked")
 	ACCELERATION = 2500
