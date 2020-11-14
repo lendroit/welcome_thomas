@@ -11,8 +11,7 @@ var item_held = null
 
 onready var reachableObjectsArea = $ReachableObjectsArea
 
-#func _input(event):
-
+signal player_won
 
 func _pick_item(item: Node2D):
 	item_held = item
@@ -26,6 +25,7 @@ func _drop_item():
 func has_entered_drop_area():
 	if(item_held):
 		_drop_item()
+		emit_signal("player_won")
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
