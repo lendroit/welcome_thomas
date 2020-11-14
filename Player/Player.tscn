@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
-[ext_resource path="res://Player/Pers_Ours_002.png" type="Texture" id=2]
 [ext_resource path="res://Player/ReachableObjectsArea.gd" type="Script" id=3]
+[ext_resource path="res://Player/Pers_Ours_Sep_001.png" type="Texture" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 14.8226
@@ -11,13 +11,44 @@ height = 19.8829
 [sub_resource type="CircleShape2D" id=2]
 radius = 39.3654
 
+[sub_resource type="Animation" id=3]
+resource_name = "BearIdle"
+
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0.345518, -85.5696 )
-scale = Vector2( 0.318631, 0.318631 )
-texture = ExtResource( 2 )
+[node name="Polygons" type="Node2D" parent="."]
+scale = Vector2( 0.3, 0.3 )
+
+[node name="ArmL" type="Polygon2D" parent="Polygons"]
+position = Vector2( -204.853, -571.019 )
+texture = ExtResource( 4 )
+polygon = PoolVector2Array( 143.947, 261.947, 41.7345, 334.956, -2.51328, 360.62, 11.2035, 402.655, 40.4071, 407.08, 75.3628, 374.336, 170.053, 293.805, 170.938, 272.124, 154.124, 259.735 )
+uv = PoolVector2Array( 143.947, 261.947, 41.7345, 334.956, -2.51328, 360.62, 11.2035, 402.655, 40.4071, 407.08, 75.3628, 374.336, 170.053, 293.805, 170.938, 272.124, 154.124, 259.735 )
+
+[node name="ArmR" type="Polygon2D" parent="Polygons"]
+position = Vector2( -365.781, -571.187 )
+texture = ExtResource( 4 )
+polygon = PoolVector2Array( 399.257, 270.796, 399.257, 292.92, 448.814, 344.69, 486.867, 372.124, 529.788, 408.407, 565.186, 383.628, 567.841, 353.982, 516.513, 324.779, 482.885, 299.115, 426.248, 258.85, 398.372, 267.257 )
+uv = PoolVector2Array( 399.257, 270.796, 399.257, 292.92, 448.814, 344.69, 486.867, 372.124, 529.788, 408.407, 565.186, 383.628, 567.841, 353.982, 516.513, 324.779, 482.885, 299.115, 426.248, 258.85, 398.372, 267.257 )
+
+[node name="LegL" type="Polygon2D" parent="Polygons"]
+position = Vector2( -182.755, -566.226 )
+texture = ExtResource( 4 )
+polygon = PoolVector2Array( 83.8584, 428.319, 81.646, 485.841, 92.708, 546.46, 98.2448, 561.445, 115.26, 567.117, 156.155, 567.117, 173.239, 544.248, 171.027, 461.947, 137.398, 422.566 )
+uv = PoolVector2Array( 83.8584, 428.319, 81.646, 485.841, 92.708, 546.46, 98.2448, 561.445, 115.26, 567.117, 156.155, 567.117, 173.239, 544.248, 171.027, 461.947, 137.398, 422.566 )
+
+[node name="LegR" type="Polygon2D" parent="Polygons"]
+position = Vector2( -383.697, -569.503 )
+texture = ExtResource( 4 )
+polygon = PoolVector2Array( 481.646, 423.451, 427.221, 426.106, 398.903, 462.832, 393.15, 507.08, 396.69, 560.62, 421.767, 567.295, 452.812, 567.146, 470.584, 558.85, 488.283, 469.027 )
+uv = PoolVector2Array( 481.646, 423.451, 427.221, 426.106, 398.903, 462.832, 393.15, 507.08, 396.69, 560.62, 421.767, 567.295, 452.812, 567.146, 470.584, 558.85, 488.283, 469.027 )
+
+[node name="Body" type="Polygon2D" parent="Polygons"]
+position = Vector2( -283.504, -569.325 )
+texture = ExtResource( 4 )
+polygon = PoolVector2Array( 138.637, 22.1239, 173.15, 134.956, 212.531, 178.761, 175.805, 428.319, 211.646, 492.478, 291.292, 516.372, 382.443, 467.699, 387.752, 392.92, 351.027, 181.858, 375.044, 36.4009, 364.727, -1.34546, 208.364, 8.2 )
+uv = PoolVector2Array( 138.637, 22.1239, 173.15, 134.956, 212.531, 178.761, 175.805, 428.319, 211.646, 492.478, 291.292, 516.372, 382.443, 467.699, 387.752, 392.92, 351.027, 181.858, 375.044, 36.4009, 364.727, -1.34546, 208.364, 8.2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.230347, -14.5111 )
@@ -32,3 +63,6 @@ script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ReachableObjectsArea"]
 shape = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/BearIdle = SubResource( 3 )
