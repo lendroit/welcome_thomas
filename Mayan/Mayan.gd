@@ -13,4 +13,6 @@ func _integrate_forces(state):
 
 	var direction_towards_initial_position = position.direction_to(initial_position)
 	var distance_to_initial_position = position.distance_to(initial_position)
-	state.apply_central_impulse(direction_towards_initial_position * distance_to_initial_position * SPEED)
+	
+	if distance_to_initial_position > 30:
+		state.apply_central_impulse(direction_towards_initial_position * distance_to_initial_position * SPEED)
