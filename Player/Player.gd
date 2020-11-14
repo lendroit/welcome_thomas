@@ -49,8 +49,8 @@ func has_been_hit(body):
 	_die()
 
 func _die():
-	self.rotation += PI/4
 	if !is_dead:
+		animation_player.play("BearDeath")
 		is_dead = true
 		emit_signal("player_died")
 
