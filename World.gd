@@ -22,3 +22,6 @@ func _body_entered_drop_zone(body):
 func _player_won():
 	playerWonLabel.visible = true
 	print("player won")
+
+func _restart_game():
+	get_tree().reload_current_scene()
