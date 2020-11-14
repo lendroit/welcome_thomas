@@ -2,12 +2,14 @@ extends Area2D
 
 var speed = 750
 
+var Player = load("res://Player/Player.tscn")
+
 func _physics_process(delta):
-	print("I EXIST!!!")
-	print(position)
 	position += transform.x * speed * delta
 
-func _on_Bullet_body_entered(body):
-	if body.is_in_group("mobs"):
-		print("YOLO")
-	print("YOLO")
+
+func _on_Spear_body_entered(body):
+	print(body)
+	if body.has_method("has_been_hit"):
+		body.has_been_hit(self)
+	pass # Replace with function body.

@@ -3,8 +3,8 @@ extends Node2D
 onready var player = $Elements/Player
 onready var mayans = $Elements/Mayans
 onready var dropOffrandeArea = $DropOffrandeArea
-onready var playerWonLabel = $Gui/PlayerWonLabel
-onready var replayButton = $Gui/PlayerWonLabel/Button
+onready var endOfGameLabel = $Gui/EndOfGameLabel
+onready var replayButton = $Gui/EndOfGameLabel/Button
 
 var number_of_angry_mayans = 0
 var number_of_guards = 0
@@ -22,6 +22,7 @@ func _on_new_angry_mayan():
 func _ready():
 	dropOffrandeArea.connect('body_entered', self, "_body_entered_drop_zone")
 	player.connect('player_won', self, "_player_won")
+	player.connect('player_died', self, "_player_died")
 	replayButton.connect("pressed", self, "_restart_game")
 	for child in mayans.get_children():
 		var maya = child as GenericMayan
@@ -36,7 +37,12 @@ func _body_entered_drop_zone(body):
 		player.has_entered_drop_area()
 
 func _player_won():
-	playerWonLabel.visible = true
+	endOfGameLabel.text = 'BRAVO'
+	endOfGameLabel.visible = true
+
+func _player_died():
+	endOfGameLabel.text = 'OHH !'
+	endOfGameLabel.visible = true
 
 func _restart_game():
 	get_tree().reload_current_scene()
