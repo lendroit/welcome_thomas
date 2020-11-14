@@ -22,7 +22,7 @@ func _ready():
 "
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 23.9121
+radius = 24.0
 
 [node name="Barrel" type="KinematicBody2D"]
 collision_layer = 0

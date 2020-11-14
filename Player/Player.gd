@@ -11,17 +11,8 @@ var item_held = null
 
 onready var reachableObjectsArea = $ReachableObjectsArea
 
-func get_input():
-	if Input.is_action_just_pressed("ui_accept"):
-		if !item_held:
-			var reachable_item = reachableObjectsArea.get_item_if_any()
-			if reachable_item:
-				_pick_item(reachable_item)
-		else:
-			_drop_item()
+#func _input(event):
 
-
-	velocity = move_and_slide(velocity)
 
 func _pick_item(item: Node2D):
 	item_held = item
@@ -32,9 +23,17 @@ func _drop_item():
 	item_held.visible = true
 	item_held = null
 
-
+func _input(event):
+	if event.is_action_pressed("ui_accept"):
+		if !item_held:
+			var reachable_item = reachableObjectsArea.get_item_if_any()
+			if reachable_item:
+				_pick_item(reachable_item)
+		else:
+			_drop_item()
 
 func _physics_process(delta):
+	
 	var input_vector = Vector2.ZERO
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
