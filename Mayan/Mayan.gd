@@ -13,7 +13,7 @@ func _integrate_forces(state):
 	_go_back_to_original_position_force(state)
 	
 func _friction_force(state):
-	state.apply_central_impulse(-state.linear_velocity *state.linear_velocity* FRICTION)
+	state.apply_central_impulse(-state.linear_velocity * FRICTION)
 
 func _go_back_to_original_position_force(state):
 	var direction_towards_initial_position = position.direction_to(initial_position)
