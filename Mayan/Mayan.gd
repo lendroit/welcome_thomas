@@ -8,13 +8,12 @@ var furthest_distance_ever = 0.0
 var distance_to_initial_position = 0.0
 
 const ACCEPTABLE_DISTANCE = 0 # max distance before mayans get angry
+const MAX_DISTANCE = 30
 const MAX_ANGRINESS_BEFORE_ITS_TOO_LATE = 1.5
-const MAX_DISTANCE = 50
 const FRICTION = 0.3
-const SPEED = 0.5
+const SPEED = 50
 
 var player
-
 
 func _ready():
 	initial_position = self.position
@@ -24,6 +23,7 @@ func _integrate_forces(state):
 	_friction_force(state)
 	_get_angriness(state)
 	_turn_color(state)
+	
 	if angriness < MAX_ANGRINESS_BEFORE_ITS_TOO_LATE:
 		_go_back_to_original_position_force(state)
 	else:
@@ -38,7 +38,7 @@ func _get_angriness(state):
 	angriness = max(0.0, min(2.0, 1.0*(furthest_distance_ever - ACCEPTABLE_DISTANCE) / (MAX_DISTANCE - ACCEPTABLE_DISTANCE)))
 	#if distance_to_initial_position < ACCEPTABLE_DISTANCE*2.0:
 	if angriness <MAX_ANGRINESS_BEFORE_ITS_TOO_LATE:
-		furthest_distance_ever *= 0.99
+		furthest_distance_ever *= 0.999
 		
 func _turn_color(state):
 	self.modulate.g = 1.0 - min(1.0, angriness)
@@ -59,5 +59,8 @@ func _go_back_to_original_position_force(state):
 		return null
 
 func _run_after_player(state):
-	print(player.position)
+	var direction_towards_player = position.direction_to(player.position)
+	direction_towards_player = direction_towards_player.normalized()
+	state.apply_central_impulse(direction_towards_player * SPEED)
+	
 	
