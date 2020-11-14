@@ -7,11 +7,11 @@ var angriness = 0.0 # how mad they are, from 0.0 to 2.0
 var furthest_distance_ever = 0.0
 var distance_to_initial_position = 0.0
 
-const ACCEPTABLE_DISTANCE = 0 # max distance before mayans get angry
-const MAX_DISTANCE = 30
-const MAX_ANGRINESS_BEFORE_ITS_TOO_LATE = 1.5
-const FRICTION = 0.3
-const SPEED = 50
+var ACCEPTABLE_DISTANCE = 0 # max distance before mayans get angry
+var MAX_DISTANCE = 30
+var MAX_ANGRINESS_BEFORE_ITS_TOO_LATE = 1.5
+var FRICTION = 0.3
+var SPEED = 50
 
 var player
 
