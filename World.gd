@@ -1,7 +1,7 @@
-extends YSort
+extends Node2D
 
-onready var player = $Player
-onready var mayans = $Mayans
+onready var player = $Elements/Player
+onready var mayans = $Elements/Mayans
 onready var dropOffrandeArea = $DropOffrandeArea
 onready var playerWonLabel = $Gui/PlayerWonLabel
 onready var replayButton = $Gui/PlayerWonLabel/Button
