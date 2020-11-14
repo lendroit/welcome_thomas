@@ -4,6 +4,7 @@ onready var player = $Player
 onready var mayans = $Mayans
 onready var dropOffrandeArea = $DropOffrandeArea
 onready var playerWonLabel = $Gui/PlayerWonLabel
+onready var replayButton = $Gui/PlayerWonLabel/Button
 
 var number_of_angry_mayans = 0
 
@@ -11,6 +12,7 @@ var number_of_angry_mayans = 0
 func _ready():
 	dropOffrandeArea.connect('body_entered', self, "_body_entered_drop_zone")
 	player.connect('player_won', self, "_player_won")
+	replayButton.connect("pressed", self, "_restart_game")
 	for child in mayans.get_children():
 		var maya = child as GenericMayan
 		maya.player = player
@@ -23,3 +25,6 @@ func _body_entered_drop_zone(body):
 func _player_won():
 	playerWonLabel.visible = true
 	print("player won")
+
+func _restart_game():
+	get_tree().reload_current_scene()
