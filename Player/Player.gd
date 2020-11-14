@@ -34,9 +34,10 @@ func has_been_hit(body):
 	_die()
 
 func _die():
-	is_dead = true
-	self.rotation = PI/4
-	emit_signal("player_won")
+	self.rotation += PI/4
+	if !is_dead:
+		is_dead = true
+		emit_signal("player_died")
 
 func _input(event):
 	if is_dead:
