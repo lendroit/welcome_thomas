@@ -31,6 +31,7 @@ func _integrate_forces(state):
 		_go_back_to_original_position_force(state)
 	else:
 		_run_after_player(state)
+
 	
 func _get_distance_to_initial_position(state):
 	distance_to_initial_position = position.distance_to(initial_position)
@@ -64,9 +65,13 @@ func _go_back_to_original_position_force(state):
 	else:
 		return null
 
-func _run_after_player(state):
+func _get_player_direction() -> Vector2:
 	var direction_towards_player = position.direction_to(player.position)
 	direction_towards_player = direction_towards_player.normalized()
+	return direction_towards_player
+
+func _run_after_player(state):
+	var direction_towards_player = _get_player_direction()
 	state.apply_central_impulse(direction_towards_player * SPEED)
 	
 	
