@@ -20,7 +20,7 @@ glow_bicubic_upscale = true
 [node name="World" type="YSort"]
 script = ExtResource( 2 )
 
-[node name="DropOffranceArea" parent="." instance=ExtResource( 8 )]
+[node name="DropOffrandeArea" parent="." instance=ExtResource( 8 )]
 position = Vector2( 515.189, 1119.93 )
 
 [node name="Background" parent="." instance=ExtResource( 6 )]
