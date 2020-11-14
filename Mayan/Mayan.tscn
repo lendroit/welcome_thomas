@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Mayan/Mayan.gd" type="Script" id=2]
 [ext_resource path="res://Mayan/Assets/Paysan_Leg_L.png" type="Texture" id=3]
@@ -139,6 +139,131 @@ tracks/9/keys = {
 "values": [ 0.0 ]
 }
 
+[sub_resource type="Animation" id=4]
+resource_name = "MayanIdlePraying"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprites/ArmR:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -54.8936, -212.383 ), Vector2( -54.8513, -198.447 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprites/ArmR:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 169.516, 152.693 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprites/LegL:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -40.7243, -62.6775 ), Vector2( -39.839, -55.7133 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprites/LegL:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sprites/Body:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -16.7658, -144.963 ), Vector2( -16.7658, -117.107 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Sprites/Body:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Sprites/ArmL:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 15.0381, -213.405 ), Vector2( 12.3467, -195.984 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Sprites/ArmL:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -172.92, -158.396 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Sprites/LegR:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -0.190372, -55.8549 ), Vector2( -1.96097, -50.6318 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Sprites/LegR:rotation_degrees")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
 [node name="Mayan" type="RigidBody2D"]
 position = Vector2( -0.236603, -0.236618 )
 collision_layer = 5
@@ -152,7 +277,7 @@ position = Vector2( 3.83827, -33.7363 )
 scale = Vector2( 0.228184, 0.232061 )
 
 [node name="LegR" type="Node2D" parent="Sprites"]
-position = Vector2( -0.190372, -55.8549 )
+position = Vector2( -0.226225, -55.7492 )
 scale = Vector2( 1, 1 )
 
 [node name="Paysan_Leg_R" type="Sprite" parent="Sprites/LegR"]
@@ -161,7 +286,8 @@ scale = Vector2( 1, 1 )
 texture = ExtResource( 7 )
 
 [node name="ArmL" type="Node2D" parent="Sprites"]
-position = Vector2( -46.9215, -211.537 )
+position = Vector2( 14.9836, -213.052 )
+rotation = -3.01289
 
 [node name="Paysan_Arm_L" type="Sprite" parent="Sprites/ArmL"]
 position = Vector2( 91.0503, 92.1724 )
@@ -169,7 +295,8 @@ scale = Vector2( 1, 1 )
 texture = ExtResource( 4 )
 
 [node name="ArmR" type="Node2D" parent="Sprites"]
-position = Vector2( 12.3944, -209.796 )
+position = Vector2( -54.8928, -212.101 )
+rotation = 2.95267
 
 [node name="Paysan_Arm_R" type="Sprite" parent="Sprites/ArmR"]
 position = Vector2( -50.3416, 91.127 )
@@ -177,7 +304,7 @@ scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 
 [node name="LegL" type="Node2D" parent="Sprites"]
-position = Vector2( -40.7243, -62.6775 )
+position = Vector2( -40.7063, -62.5365 )
 
 [node name="Paysan_Leg_L" type="Sprite" parent="Sprites/LegL"]
 position = Vector2( 128.799, -29.5687 )
@@ -185,7 +312,7 @@ scale = Vector2( 1, 1 )
 texture = ExtResource( 3 )
 
 [node name="Body" type="Node2D" parent="Sprites"]
-position = Vector2( -16.7658, -144.963 )
+position = Vector2( -16.7658, -144.399 )
 scale = Vector2( 1, 1 )
 
 [node name="Paysan_Body" type="Sprite" parent="Sprites/Body"]
@@ -200,3 +327,4 @@ shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/MayanIdle = SubResource( 3 )
+anims/MayanIdlePraying = SubResource( 4 )

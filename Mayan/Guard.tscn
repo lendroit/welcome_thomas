@@ -7,6 +7,23 @@
 [node name="Guard" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 
+[node name="LegR" parent="Sprites" index="0"]
+position = Vector2( -0.190372, -55.8549 )
+
+[node name="ArmL" parent="Sprites" index="1"]
+position = Vector2( -46.9215, -211.537 )
+rotation = 0.0
+
+[node name="ArmR" parent="Sprites" index="2"]
+position = Vector2( 12.3944, -209.796 )
+rotation = 0.0
+
+[node name="LegL" parent="Sprites" index="3"]
+position = Vector2( -40.7243, -62.6775 )
+
+[node name="Body" parent="Sprites" index="4"]
+position = Vector2( -16.7658, -144.963 )
+
 [node name="Arme_Lance_001" type="Sprite" parent="." index="2"]
 position = Vector2( 16.9623, -56.2253 )
 rotation = 0.423871

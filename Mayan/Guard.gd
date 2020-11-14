@@ -27,6 +27,11 @@ func _ready():
 	MAX_ANGRINESS_BEFORE_ITS_TOO_LATE = 1.1
 	SPEED = 20
 
+	# Initialize randomly delayed animation for each Mayan
+	yield(get_tree().create_timer(rand_range(0, 1)), "timeout")
+	animation_player.play("MayanIdle")
+
+
 func throw_spear():
 	var direction_towards_player = _get_player_direction()
 	var b = Spear.instance()

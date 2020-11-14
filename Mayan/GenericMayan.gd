@@ -3,6 +3,8 @@ class_name GenericMayan
 
 onready var animation_player = $AnimationPlayer as AnimationPlayer
 
+const AVAILABLE_IDLE_ANIMATIONS = ["MayanIdle", "MayanIdlePraying"]
+
 var initial_position := Vector2.ZERO;
 var collision_count = 0
 var angriness = 0.0 # how mad they are, from 0.0 to 2.0
@@ -25,8 +27,11 @@ func _ready():
 	initial_position = self.position
 
 	# Initialize randomly delayed animation for each Mayan
-	yield(get_tree().create_timer(rand_range(0, 0.5)), "timeout")
-	animation_player.play("MayanIdle")
+	yield(get_tree().create_timer(rand_range(0, 1)), "timeout")
+	
+	# Initialize randomly picked animation for each mayan
+	var rand_animation_index: int = randi() % AVAILABLE_IDLE_ANIMATIONS.size()
+	animation_player.play(AVAILABLE_IDLE_ANIMATIONS[rand_animation_index])
 
 func _integrate_forces(state):
 	_get_distance_to_initial_position(state)
