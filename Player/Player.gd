@@ -15,8 +15,10 @@ onready var animation_player = $AnimationPlayer
 
 signal player_won
 signal player_died
+signal player_picked
 
 func _pick_item(item: Node2D):
+	emit_signal("player_picked")
 	ACCELERATION = 2500
 	MAX_SPEED = 200
 	FRICTION = 2000
