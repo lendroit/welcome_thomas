@@ -19,6 +19,15 @@ config/name="Donours"
 run/main_scene="res://World.tscn"
 config/icon="res://icon.png"
 
+[global]
+
+group=false
+
+[layer_names]
+
+2d_render/layer_2="Pickable"
+2d_render/layer_3="Pushables"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
