@@ -3,6 +3,7 @@ extends YSort
 onready var player = $Player
 onready var mayans = $Mayans
 onready var dropOffrandeArea = $DropOffrandeArea
+onready var playerWonLabel = $CanvasLayer/PlayerWonLabel
 
 
 # Called when the node enters the scene tree for the first time.
@@ -19,4 +20,5 @@ func _body_entered_drop_zone(body):
 		player.has_entered_drop_area()
 
 func _player_won():
+	playerWonLabel.visible = true
 	print("player won")
