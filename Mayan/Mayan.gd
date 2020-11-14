@@ -19,5 +19,5 @@ func _go_back_to_original_position_force(state):
 	var direction_towards_initial_position = position.direction_to(initial_position)
 	var distance_to_initial_position = position.distance_to(initial_position)
 	
-	if distance_to_initial_position > 30:
+	if distance_to_initial_position > 0:
 		state.apply_central_impulse(direction_towards_initial_position * distance_to_initial_position * SPEED)
