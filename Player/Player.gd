@@ -28,6 +28,10 @@ func has_entered_drop_area():
 		_drop_item()
 		emit_signal("player_won")
 
+func has_been_hit(body):
+	print("spear !")
+	print(body)
+
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
 		if !item_held:
