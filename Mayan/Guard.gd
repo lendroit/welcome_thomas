@@ -27,15 +27,10 @@ func _ready():
 	SPEED = 20
 
 func throw_spear():
-	var direction_towards_player = _get_player_direction() 
+	var direction_towards_player = _get_player_direction()
 	var b = Spear.instance()
 	b.position = self.global_position
-	var t = Transform2D()
-	# Scale
-	t.x *= direction_towards_player.x
-	t.y *= direction_towards_player.y
-	b.transform = t
-	print(owner)
+	b.rotation = direction_towards_player.angle()
 	get_node("/root/World").add_child(b)
 	print("b")
 	print(b.position)

@@ -65,7 +65,7 @@ func _go_back_to_original_position_force(state):
 	else:
 		return null
 
-func _get_player_direction():
+func _get_player_direction() -> Vector2:
 	var direction_towards_player = position.direction_to(player.position)
 	direction_towards_player = direction_towards_player.normalized()
 	return direction_towards_player
