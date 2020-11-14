@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Mayan/Mayan.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Mayan/Arme_Lance_001.png" type="Texture" id=2]
+[ext_resource path="res://Mayan/Guard.gd" type="Script" id=3]
 
 [node name="Guard" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
 
 [node name="Arme_Lance_001" type="Sprite" parent="." index="2"]
 position = Vector2( 16.9623, -56.2253 )

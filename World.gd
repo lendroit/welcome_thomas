@@ -12,7 +12,7 @@ onready var mayans = $Mayans
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for child in mayans.get_children():
-		var maya = child as Mayan
+		var maya = child as GenericMayan
 		maya.player = player
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
