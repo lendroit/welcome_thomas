@@ -14,6 +14,7 @@ onready var reachableObjectsArea = $ReachableObjectsArea
 onready var animation_player = $AnimationPlayer
 
 signal player_won
+signal player_died
 
 func _pick_item(item: Node2D):
 	item_held = item
@@ -35,6 +36,7 @@ func has_been_hit(body):
 func _die():
 	is_dead = true
 	self.rotation = PI/4
+	emit_signal("player_won")
 
 func _input(event):
 	if is_dead:
