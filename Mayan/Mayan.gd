@@ -1,4 +1,5 @@
 extends RigidBody2D
+class_name Mayan
 
 var initial_position := Vector2.ZERO;
 var collision_count = 0
@@ -12,15 +13,21 @@ const MAX_DISTANCE = 50
 const FRICTION = 0.3
 const SPEED = 0.5
 
+var player
+
+
 func _ready():
 	initial_position = self.position
 
 func _integrate_forces(state):
 	_get_distance_to_initial_position(state)
 	_friction_force(state)
-	_go_back_to_original_position_force(state)
 	_get_angriness(state)
 	_turn_color(state)
+	if angriness < MAX_ANGRINESS_BEFORE_ITS_TOO_LATE:
+		_go_back_to_original_position_force(state)
+	else:
+		_run_after_player(state)
 	
 func _get_distance_to_initial_position(state):
 	distance_to_initial_position = position.distance_to(initial_position)
@@ -30,13 +37,13 @@ func _get_distance_to_initial_position(state):
 func _get_angriness(state):
 	angriness = max(0.0, min(2.0, 1.0*(furthest_distance_ever - ACCEPTABLE_DISTANCE) / (MAX_DISTANCE - ACCEPTABLE_DISTANCE)))
 	#if distance_to_initial_position < ACCEPTABLE_DISTANCE*2.0:
-	if angriness <1.5:
+	if angriness <MAX_ANGRINESS_BEFORE_ITS_TOO_LATE:
 		furthest_distance_ever *= 0.99
 		
 func _turn_color(state):
 	self.modulate.g = 1.0 - min(1.0, angriness)
 	self.modulate.b = 1.0 - min(1.0, angriness)
-	self.modulate.r = min(1.0, 2.0 - angriness)
+	self.modulate.r = max(0.5, min(1.0, 2.0 - angriness))
 	
 	
 func _friction_force(state):
@@ -50,3 +57,7 @@ func _go_back_to_original_position_force(state):
 
 	else:
 		return null
+
+func _run_after_player(state):
+	print(player.position)
+	
