@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
-[ext_resource path="res://Player/Pers_Ours.png" type="Texture" id=2]
+[ext_resource path="res://Player/Pers_Ours_002.png" type="Texture" id=2]
 [ext_resource path="res://Player/ReachableObjectsArea.gd" type="Script" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -15,7 +15,7 @@ radius = 39.3654
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0.115187, -68.2945 )
+position = Vector2( 0.345518, -85.5696 )
 scale = Vector2( 0.318631, 0.318631 )
 texture = ExtResource( 2 )
 
