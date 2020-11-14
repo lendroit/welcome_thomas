@@ -13,7 +13,6 @@ func _ready():
 		maya.player = player
 
 func _body_entered_drop_zone(body):
-	print('Entered')
-	print(body)
 	if(body == player):
 		print("This is the player")
+		player.has_entered_drop_area()

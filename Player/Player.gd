@@ -23,6 +23,10 @@ func _drop_item():
 	item_held.visible = true
 	item_held = null
 
+func has_entered_drop_area():
+	if(item_held):
+		_drop_item()
+
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
 		if !item_held:
