@@ -35,6 +35,10 @@ func _restart_game():
 	current_level -= 1
 	_next_level()
 
+# Necessary to fix an error when this is called from a signal
+func _deferred_instanciate_level(level_path: String):
+	call_deferred("_instanciate_level", level_path)
+
 func _instanciate_level(level_path: String):
 	var new_level = load(level_path)
 	
@@ -49,7 +53,7 @@ func _next_level():
 		_game_end()
 		return
 	
-	_instanciate_level(LEVEL_PATHS[current_level])
+	_deferred_instanciate_level(LEVEL_PATHS[current_level])
 
 func _game_end():
 	print("BRAVO")
