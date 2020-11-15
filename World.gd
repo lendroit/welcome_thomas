@@ -1,8 +1,8 @@
 extends Node2D
 
-onready var player = $Elements/Player
-onready var mayans = $Elements/Mayans
-onready var dropOffrandeArea = $DropOffrandeArea
+onready var player = $Level/Elements/Player
+onready var mayans = $Level/Elements/Mayans
+onready var dropOffrandeArea = $Level/DropOffrandeArea
 onready var endOfGameLabel = $Gui/EndOfGameLabel
 onready var replayButton = $Gui/EndOfGameLabel/Button
 
