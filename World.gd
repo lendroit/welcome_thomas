@@ -27,7 +27,8 @@ func _connect_level():
 	$Level.connect('player_died', self, "_player_died")
 
 func _player_won():
-	_next_level()
+	self.remove_child($Level)
+	player_won_interface.visible = true
 
 func _player_died():
 	player_died_interface.visible = true
@@ -49,6 +50,7 @@ func _instanciate_level(level_path: String):
 	_connect_level()
 
 func _next_level():
+	player_won_interface.visible = false
 	current_level += 1
 
 	if current_level >= LEVEL_PATHS.size():
