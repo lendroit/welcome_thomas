@@ -7,15 +7,15 @@ const LEVEL_PATHS = [
 	"res://Levels/LevelC.tscn",
 ]
 
-onready var endOfGameLabel = $Gui/PlayerWonInterface
-onready var replayButton = $Gui/PlayerWonInterface/ReplayButton
+onready var player_won_interface = $Gui/PlayerWonInterface
+onready var replay_button = $Gui/PlayerWonInterface/ReplayButton
 
 var current_level = STARTING_LEVEL
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_deferred_instanciate_level(LEVEL_PATHS[current_level])
-	replayButton.connect("pressed", self, "_restart_game")
+	replay_button.connect("pressed", self, "_restart_game")
 
 func _connect_level():
 	$Level.connect('player_won', self, "_player_won")
@@ -25,11 +25,11 @@ func _player_won():
 	_next_level()
 
 func _player_died():
-	endOfGameLabel.text = 'OHH !'
-	endOfGameLabel.visible = true
+	player_won_interface.text = 'OHH !'
+	player_won_interface.visible = true
 
 func _restart_game():
-	endOfGameLabel.visible = false
+	player_won_interface.visible = false
 	_deferred_instanciate_level(LEVEL_PATHS[current_level])
 
 # Necessary to fix an error when this is called from a signal
