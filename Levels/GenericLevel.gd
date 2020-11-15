@@ -1,10 +1,5 @@
 extends Node2D
 
-const LEVEL_PATHS = [
-	"res://Levels/LevelA.tscn",
-	"res://Levels/LevelB.tscn",
-]
-
 signal player_won
 signal player_died
 
