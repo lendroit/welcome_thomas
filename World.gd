@@ -54,3 +54,10 @@ func _player_died():
 
 func _restart_game():
 	get_tree().reload_current_scene()
+
+func _next_level():
+	var current_level = $Level
+	var new_level = load("res://Levels/LevelB.tscn")
+	
+	self.remove_child(current_level)
+	add_child(new_level.instance())

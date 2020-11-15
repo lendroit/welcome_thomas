@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Levels/GenericLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Items/Tree.tscn" type="PackedScene" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://Levels/Elements_Trees.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Mayan/Mayan.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Levels/Elements_Mayans.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Mayan/Guard.tscn" type="PackedScene" id=7]
 
 [node name="Level" instance=ExtResource( 1 )]
 
@@ -15,24 +14,21 @@
 [node name="Mayans" parent="Elements" index="7" instance=ExtResource( 6 )]
 
 [node name="Mayan" parent="Elements/Mayans" index="0" instance=ExtResource( 5 )]
-position = Vector2( 327.975, 440.335 )
+position = Vector2( 231.007, 490.288 )
 
 [node name="Mayan2" parent="Elements/Mayans" index="1" instance=ExtResource( 5 )]
 position = Vector2( 402.882, 440.335 )
 
 [node name="Mayan3" parent="Elements/Mayans" index="2" instance=ExtResource( 5 )]
-position = Vector2( 493.559, 493.559 )
+position = Vector2( 500.905, 635.338 )
 
 [node name="Mayan4" parent="Elements/Mayans" index="3" instance=ExtResource( 5 )]
-position = Vector2( 569.451, 458.076 )
+position = Vector2( 811.872, 445.588 )
 
 [node name="Mayan5" parent="Elements/Mayans" index="4" instance=ExtResource( 5 )]
-position = Vector2( 622.675, 499.472 )
-
-[node name="Guard" parent="Elements/Mayans" index="5" instance=ExtResource( 7 )]
-position = Vector2( 525.695, 650.664 )
+position = Vector2( 760.047, 602.317 )
 
 [node name="Trees" parent="Elements" index="8" instance=ExtResource( 4 )]
 
 [node name="Tree" parent="Elements/Trees" index="0" instance=ExtResource( 2 )]
-position = Vector2( 370.007, 505.029 )
+position = Vector2( 490.483, 812.83 )
