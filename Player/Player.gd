@@ -36,7 +36,6 @@ func _pick_item(item: Node2D):
 	item.visible = false
 
 func _drop_item():
-	print("etbah")
 	picked_offrande.visible = false
 	ACCELERATION = 7000
 	current_max_speed = MAX_SPEED
