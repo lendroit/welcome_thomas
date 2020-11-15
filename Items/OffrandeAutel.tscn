@@ -24,9 +24,11 @@ func _ready():
 
 [node name="OffrandeAutel" type="Node2D"]
 
-[node name="Offrande" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1.55896, -38.985 )
+[node name="Offrande" type="KinematicBody2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 472.798, 231.918 )
+collision_layer = 0
+collision_mask = 2
 script = SubResource( 1 )
 
-[node name="Autel" parent="." instance=ExtResource( 1 )]
-position = Vector2( -2.16803, -24.246 )
+[node name="Autel" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 469.071, 246.657 )
