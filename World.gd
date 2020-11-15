@@ -9,6 +9,13 @@ const LEVEL_PATHS = [
 	"res://Levels/LevelE.tscn",
 ]
 
+
+var victory_sounds = [
+	preload("res://assets/Sounds/victory_session.wav")
+]
+
+onready var victory = $AudioPlayers/Victory
+
 onready var endOfGameLabel = $Gui/EndOfGameLabel
 onready var replayButton = $Gui/EndOfGameLabel/Button
 
@@ -46,6 +53,7 @@ func _instanciate_level(level_path: String):
 	_connect_level()
 
 func _next_level():
+	_play_victory_sound()
 	current_level += 1
 
 	if current_level >= LEVEL_PATHS.size():
@@ -56,3 +64,9 @@ func _next_level():
 
 func _game_end():
 	print("BRAVO")
+	
+	
+func _play_victory_sound():
+	var random_index = randi()%victory_sounds.size()
+	victory.stream = victory_sounds[random_index]
+	victory.play()
