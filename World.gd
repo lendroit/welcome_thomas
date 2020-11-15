@@ -3,6 +3,7 @@ extends Node2D
 const LEVEL_PATHS = [
 	"res://Levels/LevelA.tscn",
 	"res://Levels/LevelB.tscn",
+	"res://Levels/LevelC.tscn",
 ]
 
 onready var endOfGameLabel = $Gui/EndOfGameLabel
