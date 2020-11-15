@@ -492,5 +492,8 @@ visible = false
 position = Vector2( 0, -190 )
 scale = Vector2( 0.995182, 1 )
 
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
