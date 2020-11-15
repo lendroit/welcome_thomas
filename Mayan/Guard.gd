@@ -36,5 +36,5 @@ func throw_spear():
 	var b = Spear.instance()
 	b.position = self.global_position
 	b.rotation = direction_towards_player.angle()
-	get_node("/root/World").add_child(b)
+	get_node("/root/World/Level").add_child(b)
 	pass
