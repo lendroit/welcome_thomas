@@ -11,3 +11,6 @@ func _input(event):
 	if event.is_action_pressed("ui_accept"):
 		var World = load("res://World.tscn")
 		get_tree().change_scene_to(World)
+	if event is InputEventScreenTouch:
+		var World = load("res://World.tscn")
+		get_tree().change_scene_to(World)
