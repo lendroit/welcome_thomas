@@ -19,8 +19,8 @@ var current_level = STARTING_LEVEL
 func _ready():
 	_deferred_instanciate_level(LEVEL_PATHS[current_level])
 	next_level_button.connect("pressed", self, "_next_level")
-	replay_button.connect("pressed", self, "_restart_game")
-	replay_button_2.connect("pressed", self, "_restart_game")
+	replay_button.connect("pressed", self, "_restart_level")
+	replay_button_2.connect("pressed", self, "_restart_level")
 
 func _connect_level():
 	$Level.connect('player_won', self, "_player_won")
@@ -37,7 +37,7 @@ func _player_won():
 func _player_died():
 	player_died_interface.visible = true
 
-func _restart_game():
+func _restart_level():
 	player_won_interface.visible = false
 	player_died_interface.visible = false
 	_deferred_instanciate_level(LEVEL_PATHS[current_level])
