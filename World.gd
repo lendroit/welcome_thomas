@@ -31,7 +31,6 @@ var current_level = STARTING_LEVEL
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_play_theme_sound()
-	print(("world is ready"))
 	_deferred_instanciate_level(LEVEL_PATHS[current_level])
 	next_level_button.connect("pressed", self, "_next_level")
 	replay_button.connect("pressed", self, "_restart_level")

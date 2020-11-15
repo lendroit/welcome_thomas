@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Items/Offrande/PickedOffrande.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player/ReachableObjectsArea.gd" type="Script" id=3]
 [ext_resource path="res://Player/Pers_Ours_Sep_001.png" type="Texture" id=4]
+[ext_resource path="res://assets/Sounds/Golden_sausage_session.wav" type="AudioStream" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 14.8226
@@ -501,3 +502,6 @@ current = true
 [node name="Impact" type="AudioStreamPlayer" parent="AudioPlayers"]
 
 [node name="Lose" type="AudioStreamPlayer" parent="AudioPlayers"]
+
+[node name="SausageTheme" type="AudioStreamPlayer" parent="AudioPlayers"]
+stream = ExtResource( 5 )

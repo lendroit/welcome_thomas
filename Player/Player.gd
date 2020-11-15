@@ -53,6 +53,7 @@ func _pickable_item_entered_area(item):
 		_pick_item(item)
 
 func _pick_item(item: Node2D):
+	$AudioPlayers/SausageTheme.play()
 	emit_signal("player_picked")
 	picked_offrande.visible = true
 	ACCELERATION = 2500
