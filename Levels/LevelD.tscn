@@ -1,0 +1,175 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Levels/GenericLevel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Items/Tree.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Items/Brasero/Brasero.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Items/Statue/Statue.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Mayan/Mayan.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Mayan/Guard.tscn" type="PackedScene" id=6]
+
+[node name="Level" instance=ExtResource( 1 )]
+
+[node name="Obstacles" parent="." index="2"]
+tile_data = PoolIntArray( -131067, 2, 0, -131066, 2, 0, -131065, 2, 0, -131064, 2, 0, -131063, 2, 0, -131062, 2, 0, -131061, 2, 0, -65534, 2, 0, -65533, 2, 0, -65532, 2, 0, -65531, 2, 0, -65530, 2, 0, -65525, 2, 0, -65524, 2, 0, -65523, 2, 0, 0, 2, 0, 1, 2, 0, 2, 2, 0, 13, 2, 0, 14, 2, 0, 15, 2, 0, 65536, 2, 0, 65551, 2, 0, 131072, 2, 0, 131087, 2, 0, 131088, 2, 0, 196608, 2, 0, 196624, 2, 2, 262144, 2, 2, 262160, 2, 2, 327680, 2, 0, 327681, 2, 0, 327692, 3, 2, 327696, 2, 0, 327697, 2, 0, 393217, 2, 0, 393218, 2, 0, 393233, 2, 4, 458754, 2, 0, 458755, 2, 0, 458756, 2, 0, 458757, 2, 0, 458758, 2, 0, 458759, 2, 0, 458769, 2, 4, 524295, 2, 0, 524296, 2, 0, 524305, 2, 2, 589832, 2, 0, 589836, 3, 2, 589841, 2, 4, 655367, 2, 0, 655377, 2, 2, 720902, 2, 0, 720903, 2, 0, 720913, 2, 4, 786437, 2, 0, 786438, 2, 0, 786447, 2, 0, 786448, 2, 0, 786449, 2, 0, 851971, 2, 0, 851972, 2, 0, 851973, 2, 0, 851974, 2, 0, 851983, 2, 0, 851984, 2, 0, 917507, 2, 0, 917508, 2, 0, 917519, 2, 2, 983042, 2, 0, 983043, 2, 0, 983054, 2, 0, 983055, 2, 0, 1048578, 2, 4, 1048590, 2, 0, 1114113, 2, 0, 1114114, 2, 0, 1114125, 2, 0, 1179649, 2, 0, 1179650, 2, 0, 1179651, 2, 0, 1179652, 2, 0, 1179653, 2, 0, 1179654, 2, 0, 1179655, 2, 0, 1179656, 2, 0, 1179657, 2, 0, 1179658, 2, 0, 1179659, 2, 0, 1179660, 2, 0 )
+
+[node name="OffrandeAutel" parent="Elements" index="1"]
+position = Vector2( -260.463, -35.051 )
+
+[node name="Mayan" parent="Elements/Mayans" index="0" instance=ExtResource( 5 )]
+position = Vector2( 518.341, 226.501 )
+
+[node name="Mayan2" parent="Elements/Mayans" index="1" instance=ExtResource( 5 )]
+position = Vector2( 610.383, 224.256 )
+
+[node name="Mayan3" parent="Elements/Mayans" index="2" instance=ExtResource( 5 )]
+position = Vector2( 684.465, 890.998 )
+
+[node name="Mayan4" parent="Elements/Mayans" index="3" instance=ExtResource( 5 )]
+position = Vector2( 754.058, 882.019 )
+
+[node name="Mayan5" parent="Elements/Mayans" index="4" instance=ExtResource( 5 )]
+position = Vector2( 734.497, 753.163 )
+
+[node name="Mayan16" parent="Elements/Mayans" index="5" instance=ExtResource( 5 )]
+position = Vector2( 625.807, 632.001 )
+
+[node name="Mayan17" parent="Elements/Mayans" index="6" instance=ExtResource( 5 )]
+position = Vector2( 704.206, 587.456 )
+
+[node name="Mayan18" parent="Elements/Mayans" index="7" instance=ExtResource( 5 )]
+position = Vector2( 613.335, 731.782 )
+
+[node name="Mayan19" parent="Elements/Mayans" index="8" instance=ExtResource( 5 )]
+position = Vector2( 561.663, 719.309 )
+
+[node name="Mayan20" parent="Elements/Mayans" index="9" instance=ExtResource( 5 )]
+position = Vector2( 627.589, 674.764 )
+
+[node name="Mayan21" parent="Elements/Mayans" index="10" instance=ExtResource( 5 )]
+position = Vector2( 855.659, 947.379 )
+
+[node name="Mayan22" parent="Elements/Mayans" index="11" instance=ExtResource( 5 )]
+position = Vector2( 768.351, 626.656 )
+
+[node name="Mayan23" parent="Elements/Mayans" index="12" instance=ExtResource( 5 )]
+position = Vector2( 543.845, 781.672 )
+
+[node name="Mayan24" parent="Elements/Mayans" index="13" instance=ExtResource( 5 )]
+position = Vector2( 707.77, 826.217 )
+
+[node name="Mayan25" parent="Elements/Mayans" index="14" instance=ExtResource( 5 )]
+position = Vector2( 787.951, 929.561 )
+
+[node name="Mayan26" parent="Elements/Mayans" index="15" instance=ExtResource( 5 )]
+position = Vector2( 490.391, 874.325 )
+
+[node name="Mayan27" parent="Elements/Mayans" index="16" instance=ExtResource( 5 )]
+position = Vector2( 805.769, 656.946 )
+
+[node name="Mayan28" parent="Elements/Mayans" index="17" instance=ExtResource( 5 )]
+position = Vector2( 935.84, 826.217 )
+
+[node name="Mayan6" parent="Elements/Mayans" index="18" instance=ExtResource( 5 )]
+position = Vector2( 560.994, 266.909 )
+
+[node name="Mayan7" parent="Elements/Mayans" index="19" instance=ExtResource( 5 )]
+position = Vector2( 538.545, 338.747 )
+
+[node name="Mayan8" parent="Elements/Mayans" index="20" instance=ExtResource( 5 )]
+position = Vector2( 587.933, 424.054 )
+
+[node name="Mayan9" parent="Elements/Mayans" index="21" instance=ExtResource( 5 )]
+position = Vector2( 859.569, 688.955 )
+
+[node name="Mayan10" parent="Elements/Mayans" index="22" instance=ExtResource( 5 )]
+position = Vector2( 940.386, 706.914 )
+
+[node name="Mayan11" parent="Elements/Mayans" index="23" instance=ExtResource( 5 )]
+position = Vector2( 899.978, 354.461 )
+
+[node name="Mayan12" parent="Elements/Mayans" index="24" instance=ExtResource( 5 )]
+position = Vector2( 693.445, 224.256 )
+
+[node name="Mayan13" parent="Elements/Mayans" index="25" instance=ExtResource( 5 )]
+position = Vector2( 852.834, 107.52 )
+
+[node name="Mayan14" parent="Elements/Mayans" index="26" instance=ExtResource( 5 )]
+position = Vector2( 971.815, 242.215 )
+
+[node name="Mayan15" parent="Elements/Mayans" index="27" instance=ExtResource( 5 )]
+position = Vector2( 722.628, 459.973 )
+
+[node name="Mayan29" parent="Elements/Mayans" index="28" instance=ExtResource( 5 )]
+position = Vector2( 663.829, 712.988 )
+
+[node name="Mayan30" parent="Elements/Mayans" index="29" instance=ExtResource( 5 )]
+position = Vector2( 761.828, 702.297 )
+
+[node name="Mayan31" parent="Elements/Mayans" index="30" instance=ExtResource( 5 )]
+position = Vector2( 599.685, 784.26 )
+
+[node name="Mayan33" parent="Elements/Mayans" index="31" instance=ExtResource( 5 )]
+position = Vector2( 653.138, 778.914 )
+
+[node name="Mayan34" parent="Elements/Mayans" index="32" instance=ExtResource( 5 )]
+position = Vector2( 824.191, 764.66 )
+
+[node name="Mayan35" parent="Elements/Mayans" index="33" instance=ExtResource( 5 )]
+position = Vector2( 815.282, 720.115 )
+
+[node name="Mayan32" parent="Elements/Mayans" index="34" instance=ExtResource( 5 )]
+position = Vector2( 849.136, 832.368 )
+
+[node name="Guard" parent="Elements/Mayans" index="35" instance=ExtResource( 6 )]
+position = Vector2( 497.08, 7.75339 )
+
+[node name="Guard2" parent="Elements/Mayans" index="36" instance=ExtResource( 6 )]
+position = Vector2( 1036.65, 490.076 )
+
+[node name="Guard3" parent="Elements/Mayans" index="37" instance=ExtResource( 6 )]
+position = Vector2( 246.705, 426.299 )
+
+[node name="Tree" parent="Elements/Obstacles" index="0" instance=ExtResource( 2 )]
+position = Vector2( 336.739, 1034.91 )
+
+[node name="Tree2" parent="Elements/Obstacles" index="1" instance=ExtResource( 2 )]
+position = Vector2( 691.437, 1140.42 )
+
+[node name="Tree3" parent="Elements/Obstacles" index="2" instance=ExtResource( 2 )]
+position = Vector2( 832.867, 1059.6 )
+
+[node name="Tree4" parent="Elements/Obstacles" index="3" instance=ExtResource( 2 )]
+position = Vector2( 720.62, 963.072 )
+
+[node name="Tree5" parent="Elements/Obstacles" index="4" instance=ExtResource( 2 )]
+position = Vector2( 635.313, 848.581 )
+
+[node name="Tree6" parent="Elements/Obstacles" index="5" instance=ExtResource( 2 )]
+position = Vector2( 709.396, 666.742 )
+
+[node name="Tree7" parent="Elements/Obstacles" index="6" instance=ExtResource( 2 )]
+position = Vector2( 904.704, 767.764 )
+
+[node name="Statue" parent="Elements/Obstacles" index="7" instance=ExtResource( 4 )]
+position = Vector2( 662.252, 547.761 )
+
+[node name="Statue2" parent="Elements/Obstacles" index="8" instance=ExtResource( 4 )]
+position = Vector2( 996.746, 415.311 )
+
+[node name="Brasero" parent="Elements/Obstacles" index="9" instance=ExtResource( 3 )]
+position = Vector2( 251.431, 336.739 )
+
+[node name="Brasero2" parent="Elements/Obstacles" index="10" instance=ExtResource( 3 )]
+position = Vector2( 365.923, 105.511 )
+
+[node name="Brasero3" parent="Elements/Obstacles" index="11" instance=ExtResource( 3 )]
+position = Vector2( 381.637, 388.372 )
+
+[node name="Brasero4" parent="Elements/Obstacles" index="12" instance=ExtResource( 3 )]
+position = Vector2( 484.904, 136.94 )
+
+[node name="Brasero5" parent="Elements/Obstacles" index="13" instance=ExtResource( 3 )]
+position = Vector2( 624.089, 168.369 )
+
+[node name="Brasero6" parent="Elements/Obstacles" index="14" instance=ExtResource( 3 )]
+position = Vector2( 500.618, 417.556 )

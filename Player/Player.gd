@@ -11,13 +11,6 @@ var item_held = null
 var is_dead = false
 var current_max_speed = MAX_SPEED
 
-var impact_sounds = [
-	preload("res://assets/Sounds/impact_01_session.wav"),
-	preload("res://assets/Sounds/impact_02_session.wav"),
-	preload("res://assets/Sounds/impact_03_session.wav"),
-]
-
-
 var death_sounds = [
 	preload("res://assets/Sounds/death_01_session.wav"),
 	preload("res://assets/Sounds/death_02_session.wav"),
@@ -30,10 +23,23 @@ var death_sounds = [
 	preload("res://assets/Sounds/death_09_session.wav"),
 ]
 
+var impact_sounds = [
+	preload("res://assets/Sounds/impact_01_session.wav"),
+	preload("res://assets/Sounds/impact_02_session.wav"),
+	preload("res://assets/Sounds/impact_03_session.wav"),
+]
+
+var lose_sound = [
+	preload("res://assets/Sounds/lose_session.wav")
+]
+
+onready var death = $AudioPlayers/Death
+onready var impact = $AudioPlayers/Impact
+onready var lose = $AudioPlayers/Lose
+
 onready var reachableObjectsArea = $ReachableObjectsArea
 onready var animation_player = $AnimationPlayer
 onready var picked_offrande = $PickedOffrande
-onready var music = $AudioStreamPlayer
 
 signal player_won
 signal player_died
@@ -72,13 +78,14 @@ func has_entered_drop_area():
 		emit_signal("player_won")
 
 func has_been_hit(body):
-	_play_hit_sound()
+	_play_impact_sound()
 	body.queue_free()
 	_die()
 
 func _die():
 	if !is_dead:
 		_play_death_sound()
+		_play_lose_sound()
 		animation_player.play("BearDeath")
 		is_dead = true
 		_drop_item()
@@ -111,12 +118,17 @@ func _physics_process(delta):
 			collision.collider.apply_central_impulse(-collision.normal * push)
 			pass
 
-func _play_hit_sound():
+func _play_impact_sound():
 	var random_index = randi()%impact_sounds.size()
-	music.stream = impact_sounds[random_index]
-	music.play()
+	impact.stream = impact_sounds[random_index]
+	impact.play()
 
 func _play_death_sound():
 	var random_index = randi()%death_sounds.size()
-	music.stream = death_sounds[random_index]
-	music.play()
+	death.stream = death_sounds[random_index]
+	death.play()
+	
+func _play_lose_sound():
+	var random_index = randi()%lose_sound.size()
+	lose.stream = lose_sound[random_index]
+	lose.play()

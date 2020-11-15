@@ -25,3 +25,9 @@ environment = SubResource( 1 )
 position = Vector2( 501.915, 1282.39 )
 
 [node name="Level" parent="." instance=ExtResource( 1 )]
+
+[node name="AudioPlayers" type="Node2D" parent="."]
+
+[node name="Victory" type="AudioStreamPlayer" parent="AudioPlayers"]
+
+[node name="Theme" type="AudioStreamPlayer" parent="AudioPlayers"]
