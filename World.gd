@@ -35,21 +35,21 @@ func _restart_game():
 	current_level -= 1
 	_next_level()
 
+func _instanciate_level(level_path: String):
+	var new_level = load(level_path)
+	
+	self.remove_child($Level)
+	add_child(new_level.instance())
+	_connect_level()
+
 func _next_level():
-	var level = $Level
 	current_level += 1
 
 	if current_level >= LEVEL_PATHS.size():
 		_game_end()
 		return
 	
-	var new_level_path = LEVEL_PATHS[current_level]
-	var new_level = load(new_level_path)
-	
-	self.remove_child(level)
-	add_child(new_level.instance())
-	
-	_connect_level()
+	_instanciate_level(LEVEL_PATHS[current_level])
 
 func _game_end():
 	print("BRAVO")
