@@ -1,5 +1,10 @@
 extends Node2D
 
+const LEVEL_PATHS = [
+	"res://Levels/LevelA.tscn",
+	"res://Levels/LevelB.tscn",
+]
+
 onready var player = $Level/Elements/Player
 onready var mayans = $Level/Elements/Mayans
 onready var dropOffrandeArea = $Level/DropOffrandeArea
@@ -8,6 +13,7 @@ onready var replayButton = $Gui/EndOfGameLabel/Button
 
 var number_of_angry_mayans = 0
 var number_of_guards = 0
+var current_level = 0
 
 func _treasure_got_picked():
 	for child in mayans.get_children():
@@ -45,8 +51,7 @@ func _body_entered_drop_zone(body):
 		player.has_entered_drop_area()
 
 func _player_won():
-	endOfGameLabel.text = 'BRAVO'
-	endOfGameLabel.visible = true
+	_next_level()
 
 func _player_died():
 	endOfGameLabel.text = 'OHH !'
@@ -56,8 +61,19 @@ func _restart_game():
 	get_tree().reload_current_scene()
 
 func _next_level():
-	var current_level = $Level
-	var new_level = load("res://Levels/LevelB.tscn")
+	var level = $Level
+	current_level += 1
+
+	if current_level >= LEVEL_PATHS.size():
+		_game_end()
+		return
 	
-	self.remove_child(current_level)
+	var new_level_path = LEVEL_PATHS[current_level]
+	var new_level = load(new_level_path)
+	
+	self.remove_child(level)
 	add_child(new_level.instance())
+
+func _game_end():
+	print("YOU WIN")
+	pass
