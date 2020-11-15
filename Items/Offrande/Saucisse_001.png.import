@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Saucisse_001.png-eabfec590a6c5ebb4d8aef354deee090.stex"
+path="res://.import/Saucisse_001.png-63dd45b217ab70591aa4588801deb10a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Items/Saucisse_001.png"
-dest_files=[ "res://.import/Saucisse_001.png-eabfec590a6c5ebb4d8aef354deee090.stex" ]
+source_file="res://Items/Offrande/Saucisse_001.png"
+dest_files=[ "res://.import/Saucisse_001.png-63dd45b217ab70591aa4588801deb10a.stex" ]
 
 [params]
 

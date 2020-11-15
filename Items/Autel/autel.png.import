@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/barrelGrey_up.png-2009670ff91086532c3e317c835d085b.stex"
+path="res://.import/autel.png-3e7751831147b11f5f8153730e33d98d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Items/barrelGrey_up.png"
-dest_files=[ "res://.import/barrelGrey_up.png-2009670ff91086532c3e317c835d085b.stex" ]
+source_file="res://Items/Autel/autel.png"
+dest_files=[ "res://.import/autel.png-3e7751831147b11f5f8153730e33d98d.stex" ]
 
 [params]
 
