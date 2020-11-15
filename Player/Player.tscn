@@ -501,4 +501,3 @@ current = true
 [node name="Impact" type="AudioStreamPlayer" parent="AudioPlayers"]
 
 [node name="Lose" type="AudioStreamPlayer" parent="AudioPlayers"]
-stream = ExtResource( 5 )
