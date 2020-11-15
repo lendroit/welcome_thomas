@@ -99,5 +99,5 @@ func _run_after_player(state):
 
 func _set_angriness(new_angriness):
 	angriness = new_angriness
+	$Exclamation.update_exclamations(angriness, MAX_ANGRINESS_BEFORE_ITS_TOO_LATE)
 	_turn_color()
-	

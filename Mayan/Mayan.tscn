@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
+[ext_resource path="res://Mayan/Exclamation.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Mayan/Mayan.gd" type="Script" id=2]
 [ext_resource path="res://Mayan/Assets/Paysan_Leg_L.png" type="Texture" id=3]
 [ext_resource path="res://Mayan/Assets/Paysan_Arm_L.png" type="Texture" id=4]
@@ -450,3 +451,6 @@ shape = SubResource( 2 )
 anims/MayanIdle = SubResource( 3 )
 anims/MayanIdlePraying = SubResource( 4 )
 anims/MayanWalking = SubResource( 5 )
+
+[node name="Exclamation" parent="." instance=ExtResource( 1 )]
+position = Vector2( 3.75967, -113.444 )
