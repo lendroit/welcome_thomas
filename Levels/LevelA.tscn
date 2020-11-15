@@ -1,5 +1,56 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Levels/GenericLevel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Items/Brasero/Brasero.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Items/Tree.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Mayan/Mayan.tscn" type="PackedScene" id=4]
 
 [node name="Level" instance=ExtResource( 1 )]
+
+[node name="OffrandeAutel" parent="Elements" index="1"]
+position = Vector2( 32.0917, 5.66325 )
+
+[node name="Mayan" parent="Elements/Mayans" index="0" instance=ExtResource( 4 )]
+position = Vector2( 447.16, 394.303 )
+
+[node name="Mayan2" parent="Elements/Mayans" index="1" instance=ExtResource( 4 )]
+position = Vector2( 545.323, 394.303 )
+
+[node name="Brasero" parent="Elements/Obstacles" index="0" instance=ExtResource( 2 )]
+position = Vector2( 304.901, 874.385 )
+
+[node name="Brasero2" parent="Elements/Obstacles" index="1" instance=ExtResource( 2 )]
+position = Vector2( 681.082, 874.385 )
+
+[node name="Brasero3" parent="Elements/Obstacles" index="2" instance=ExtResource( 2 )]
+position = Vector2( 304.901, 673.567 )
+
+[node name="Brasero4" parent="Elements/Obstacles" index="3" instance=ExtResource( 2 )]
+position = Vector2( 681.082, 673.567 )
+
+[node name="Brasero5" parent="Elements/Obstacles" index="4" instance=ExtResource( 2 )]
+position = Vector2( 304.901, 472.749 )
+
+[node name="Brasero6" parent="Elements/Obstacles" index="5" instance=ExtResource( 2 )]
+position = Vector2( 681.082, 472.749 )
+
+[node name="Tree" parent="Elements/Obstacles" index="6" instance=ExtResource( 3 )]
+position = Vector2( 853.262, 804.181 )
+
+[node name="Tree2" parent="Elements/Obstacles" index="7" instance=ExtResource( 3 )]
+position = Vector2( 823.058, 590.865 )
+
+[node name="Tree3" parent="Elements/Obstacles" index="8" instance=ExtResource( 3 )]
+position = Vector2( 156.683, 630.508 )
+
+[node name="Tree4" parent="Elements/Obstacles" index="9" instance=ExtResource( 3 )]
+position = Vector2( 151.02, 811.732 )
+
+[node name="Tree5" parent="Elements/Obstacles" index="10" instance=ExtResource( 3 )]
+position = Vector2( 736.222, 1025.05 )
+
+[node name="Tree6" parent="Elements/Obstacles" index="11" instance=ExtResource( 3 )]
+position = Vector2( 260.509, 256.734 )
+
+[node name="Tree7" parent="Elements/Obstacles" index="12" instance=ExtResource( 3 )]
+position = Vector2( 232.193, 1062.8 )
