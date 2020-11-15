@@ -2,11 +2,12 @@
 
 [ext_resource path="res://Levels/GenericLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Items/Tree.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Levels/ElementsNew.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Levels/Elements.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Levels/Elements_Trees.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Mayan/Mayan.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Levels/Elements_Mayans.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Mayan/Guard.tscn" type="PackedScene" id=7]
+
 
 [node name="Level" instance=ExtResource( 1 )]
 
