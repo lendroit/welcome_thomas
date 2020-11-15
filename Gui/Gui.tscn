@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Roboto-Medium.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://button_font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://assets/font_big.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Mayan.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="DynamicFont" id=1]
-font_data = ExtResource( 1 )
+size = 128
+outline_size = 5
+outline_color = Color( 0.0352941, 0.00392157, 0.00392157, 1 )
+font_data = ExtResource( 3 )
 
 [node name="Gui" type="CanvasLayer"]
 
@@ -12,9 +16,11 @@ font_data = ExtResource( 1 )
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -0.677673
-margin_bottom = -0.677673
-custom_fonts/font = ExtResource( 2 )
+margin_left = -0.845398
+margin_top = -1.25586
+margin_right = -0.845398
+margin_bottom = -1.25586
+custom_fonts/font = SubResource( 1 )
 text = "bravo !"
 align = 1
 valign = 1
@@ -28,11 +34,11 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -41.3552
-margin_top = 98.9727
-margin_right = 40.6448
-margin_bottom = 123.973
-custom_fonts/font = SubResource( 1 )
+margin_left = -41.2672
+margin_top = 96.6873
+margin_right = 44.7328
+margin_bottom = 121.687
+custom_fonts/font = ExtResource( 1 )
 text = "Continuer"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -44,10 +50,10 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -34.0
-margin_top = 134.0
+margin_top = 133.422
 margin_right = 34.0
-margin_bottom = 159.0
-custom_fonts/font = SubResource( 1 )
+margin_bottom = 158.422
+custom_fonts/font = ExtResource( 1 )
 text = "Rejouer"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -77,7 +83,7 @@ margin_left = -34.0
 margin_top = 100.0
 margin_right = 34.0
 margin_bottom = 65.5
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 1 )
 text = "Rejouer"
 __meta__ = {
 "_edit_use_anchors_": false
