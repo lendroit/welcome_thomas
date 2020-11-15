@@ -31,9 +31,7 @@ func _player_died():
 
 func _restart_game():
 	endOfGameLabel.visible = false
-	# TODO hack to make it simpler but it sucks
-	current_level -= 1
-	_next_level()
+	_deferred_instanciate_level(LEVEL_PATHS[current_level])
 
 # Necessary to fix an error when this is called from a signal
 func _deferred_instanciate_level(level_path: String):
