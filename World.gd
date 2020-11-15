@@ -5,9 +5,6 @@ const LEVEL_PATHS = [
 	"res://Levels/LevelB.tscn",
 ]
 
-onready var player = $Level/Elements/Player
-onready var mayans = $Level/Elements/Mayans
-onready var dropOffrandeArea = $Level/DropOffrandeArea
 onready var endOfGameLabel = $Gui/EndOfGameLabel
 onready var replayButton = $Gui/EndOfGameLabel/Button
 

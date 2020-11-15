@@ -31,9 +31,9 @@ func _ready():
 	animation_player.play(IDLE_ANIMATION)
 
 func _integrate_forces(state):
-	_get_distance_to_initial_position(state)
+	_get_distance_to_initial_position()
 	_friction_force(state)
-	_get_angriness(state)
+	_get_angriness()
 
 	
 	if angriness < MAX_ANGRINESS_BEFORE_ITS_TOO_LATE:
@@ -50,12 +50,12 @@ func _integrate_forces(state):
 		animation_player.play(IDLE_ANIMATION)
 
 	
-func _get_distance_to_initial_position(state):
+func _get_distance_to_initial_position():
 	distance_to_initial_position = position.distance_to(initial_position)
 	if distance_to_initial_position > furthest_distance_ever:
 		furthest_distance_ever = distance_to_initial_position
 	
-func _get_angriness(state):
+func _get_angriness():
 	var new_angriness = max(0.0, min(2.0, 1.0*(furthest_distance_ever - ACCEPTABLE_DISTANCE) / (MAX_DISTANCE - ACCEPTABLE_DISTANCE)))
 	
 	if new_angriness == angriness:
