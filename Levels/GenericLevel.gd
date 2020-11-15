@@ -11,8 +11,6 @@ signal player_died
 onready var player = $Elements/Player
 onready var mayans = $Elements/Mayans
 onready var dropOffrandeArea = $DropOffrandeArea
-onready var endOfGameLabel = $Gui/EndOfGameLabel
-onready var replayButton = $Gui/EndOfGameLabel/Button
 
 var number_of_angry_mayans = 0
 var number_of_guards = 0
