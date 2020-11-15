@@ -36,5 +36,10 @@ func throw_spear():
 	var b = Spear.instance()
 	b.position = self.global_position
 	b.rotation = direction_towards_player.angle()
-	get_node("/root/World/Level").add_child(b)
+
+	# TODO this should be a signal
+	var level_node = get_node("/root/World/Level")
+
+	if level_node != null:
+	 level_node.add_child(b)
 	pass
