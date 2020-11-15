@@ -10,6 +10,12 @@ var velocity = Vector2.ZERO
 var item_held = null
 var is_dead = false
 
+var impact_sounds = [
+	preload("res://assets/Sounds/impact_01_session.wav"),
+	preload("res://assets/Sounds/impact_02_session.wav"),
+	preload("res://assets/Sounds/impact_03_session.wav"),
+]
+
 onready var reachableObjectsArea = $ReachableObjectsArea
 onready var animation_player = $AnimationPlayer
 onready var picked_offrande = $PickedOffrande
@@ -51,7 +57,7 @@ func has_entered_drop_area():
 		emit_signal("player_won")
 
 func has_been_hit(body):
-	music.play()
+	_play_hit_sound()
 	body.queue_free()
 	_die()
 
@@ -89,3 +95,8 @@ func _physics_process(delta):
 		if collision.collider.get_collision_layer_bit(2):
 			collision.collider.apply_central_impulse(-collision.normal * push)
 			pass
+
+func _play_hit_sound():
+	var random_index = randi()%impact_sounds.size()
+	music.stream = impact_sounds[random_index]
+	music.play()
