@@ -5,7 +5,7 @@ onready var animation_player = $AnimationPlayer as AnimationPlayer
 
 var initial_position := Vector2.ZERO;
 var collision_count = 0
-var angriness = 0.0 # how mad they are, from 0.0 to 2.0
+var angriness = 0.0 setget _set_angriness # how mad they are, from 0.0 to 2.0
 var furthest_distance_ever = 0.0
 var distance_to_initial_position = 0.0
 
@@ -63,14 +63,13 @@ func _get_angriness(state):
 	
 	if (angriness < MAX_ANGRINESS_BEFORE_ITS_TOO_LATE) and (new_angriness > MAX_ANGRINESS_BEFORE_ITS_TOO_LATE):
 		emit_signal("got_angry")
-	angriness = new_angriness
-	_turn_color(state)
+	_set_angriness(new_angriness)
 
 	#if distance_to_initial_position < ACCEPTABLE_DISTANCE*2.0:
 	if angriness <MAX_ANGRINESS_BEFORE_ITS_TOO_LATE:
 		furthest_distance_ever *= CALM_DOWN
 		
-func _turn_color(state):
+func _turn_color():
 	self.modulate.g = 1.0 - min(1.0, angriness)
 	self.modulate.b = 1.0 - min(1.0, angriness)
 	self.modulate.r = max(0.5, min(1.0, 2.0 - angriness))
@@ -97,5 +96,8 @@ func _get_player_direction() -> Vector2:
 func _run_after_player(state):
 	var direction_towards_player = _get_player_direction()
 	state.apply_central_impulse(direction_towards_player * SPEED)
-	
+
+func _set_angriness(new_angriness):
+	angriness = new_angriness
+	_turn_color()
 	
