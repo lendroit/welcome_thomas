@@ -149,6 +149,7 @@ tile_data = PoolIntArray( 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 
 position = Vector2( 517.162, 1116.9 )
 
 [node name="OffrandeAutel" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 35.8672, -28.3162 )
 
 [node name="Mayans" type="YSort" parent="Elements"]
 
