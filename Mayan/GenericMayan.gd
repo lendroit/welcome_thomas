@@ -18,6 +18,8 @@ var MAX_ANGRINESS_BEFORE_ITS_TOO_LATE = 1.5
 var FRICTION = 0.3
 var SPEED = 50
 var CALM_DOWN = 0.995 # how fast they calm down wen angry from 1. to 0.
+var RUN_ANIMATION = "MayanWalking"
+var IDLE_ANIMATION = "MayanIdle"
 
 var player
 
@@ -26,7 +28,7 @@ func _ready():
 
 	# Initialize randomly delayed animation for each Mayan
 	yield(get_tree().create_timer(rand_range(0, 1)), "timeout")
-	animation_player.play("MayanIdle")
+	animation_player.play(IDLE_ANIMATION)
 
 func _integrate_forces(state):
 	_get_distance_to_initial_position(state)
@@ -42,10 +44,10 @@ func _integrate_forces(state):
 	var is_moving = self.linear_velocity.length() > 2
 
 	if is_moving:
-		animation_player.play("MayanWalking")
+		animation_player.play(RUN_ANIMATION)
 	else:
 		# TODO this breaks the random initial delay
-		animation_player.play("MayanIdle")
+		animation_player.play(IDLE_ANIMATION)
 
 	
 func _get_distance_to_initial_position(state):

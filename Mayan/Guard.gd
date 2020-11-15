@@ -5,6 +5,9 @@ var Spear = load("res://Mayan/Spear.tscn")
 var timer
 
 func _init():
+	self.RUN_ANIMATION = "GuardRunning"
+	self.IDLE_ANIMATION = "GuardIdle"
+
 	timer = Timer.new()
 	add_child(timer)
 	timer.autostart = true
@@ -26,10 +29,6 @@ func _ready():
 	MAX_DISTANCE = 3
 	MAX_ANGRINESS_BEFORE_ITS_TOO_LATE = 1.1
 	SPEED = 20
-
-	# Initialize randomly delayed animation for each Mayan
-	yield(get_tree().create_timer(rand_range(0, 1)), "timeout")
-	animation_player.play("MayanIdle")
 
 
 func throw_spear():
