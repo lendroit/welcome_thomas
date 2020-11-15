@@ -13,6 +13,7 @@ var is_dead = false
 onready var reachableObjectsArea = $ReachableObjectsArea
 onready var animation_player = $AnimationPlayer
 onready var picked_offrande = $PickedOffrande
+onready var music = $AudioStreamPlayer
 
 signal player_won
 signal player_died
@@ -50,6 +51,7 @@ func has_entered_drop_area():
 		emit_signal("player_won")
 
 func has_been_hit(body):
+	music.play()
 	body.queue_free()
 	_die()
 
