@@ -1,6 +1,6 @@
 extends "res://Mayan/GenericMayan.gd"
 
-var Spear = load("res://Mayan/Spear.tscn")
+var Spear = load("res://Mayan/SubElements/Spear.tscn")
 
 var timer
 

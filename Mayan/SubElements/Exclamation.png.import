@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Garde_001.png-40d4adeb12fc364994d208f62eb810f3.stex"
+path="res://.import/Exclamation.png-57e3cfe000c59865e549a5691ed8d931.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Mayan/Garde_001.png"
-dest_files=[ "res://.import/Garde_001.png-40d4adeb12fc364994d208f62eb810f3.stex" ]
+source_file="res://Mayan/SubElements/Exclamation.png"
+dest_files=[ "res://.import/Exclamation.png-57e3cfe000c59865e549a5691ed8d931.stex" ]
 
 [params]
 

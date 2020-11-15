@@ -1,8 +1,9 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Mayan/Mayan.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Mayan/Arme_Lance_001.png" type="Texture" id=2]
+[ext_resource path="res://Mayan/SubElements/Arme_Lance_001.png" type="Texture" id=2]
 [ext_resource path="res://Mayan/Guard.gd" type="Script" id=3]
+
 
 [sub_resource type="Animation" id=2]
 resource_name = "GuardIdle"
