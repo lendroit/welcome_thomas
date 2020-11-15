@@ -27,7 +27,10 @@ position = Vector2( 794.411, 524.915 )
 position = Vector2( 544.411, 646.915 )
 
 [node name="Guard" parent="Elements/Mayans" index="5" instance=ExtResource( 7 )]
-position = Vector2( 441.352, 525.136 )
+position = Vector2( 615.352, 891.136 )
+
+[node name="Guard2" parent="Elements/Mayans" index="6" instance=ExtResource( 7 )]
+position = Vector2( 409.352, 895.136 )
 
 [node name="Brasero" parent="Elements/Obstacles" index="0" instance=ExtResource( 2 )]
 position = Vector2( 246, 1082 )
