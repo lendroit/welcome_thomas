@@ -40,9 +40,11 @@ func _drop_item():
 	ACCELERATION = 7000
 	MAX_SPEED = 400
 	FRICTION = 10000
-	item_held.position = position
-	item_held.visible = true
-	item_held = null
+
+	if item_held:
+		item_held.position = position
+		item_held.visible = true
+		item_held = null
 
 func has_entered_drop_area():
 	if(item_held):
