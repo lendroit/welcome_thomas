@@ -1,5 +1,7 @@
 extends Node2D
 
+var Outro = preload("res://Intro/Outro.tscn")
+
 const STARTING_LEVEL = 0
 const LEVEL_PATHS = [
 	"res://Levels/LevelA.tscn",
@@ -60,4 +62,4 @@ func _next_level():
 	_deferred_instanciate_level(LEVEL_PATHS[current_level])
 
 func _game_end():
-	print("BRAVO")
+	get_tree().change_scene_to(Outro)
