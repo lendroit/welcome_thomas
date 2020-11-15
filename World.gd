@@ -14,7 +14,10 @@ var victory_sounds = [
 	preload("res://assets/Sounds/victory_session.wav")
 ]
 
+var theme_sound = preload("res://assets/Sounds/r1_session.wav")
+
 onready var victory = $AudioPlayers/Victory
+onready var theme = $AudioPlayers/Theme
 
 onready var endOfGameLabel = $Gui/EndOfGameLabel
 onready var replayButton = $Gui/EndOfGameLabel/Button
@@ -23,6 +26,8 @@ var current_level = STARTING_LEVEL
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	_play_theme_sound()
+	print(("world is ready"))
 	_deferred_instanciate_level(LEVEL_PATHS[current_level])
 	replayButton.connect("pressed", self, "_restart_game")
 
@@ -70,3 +75,7 @@ func _play_victory_sound():
 	var random_index = randi()%victory_sounds.size()
 	victory.stream = victory_sounds[random_index]
 	victory.play()
+
+func _play_theme_sound():
+	theme.stream = theme_sound
+	theme.play()

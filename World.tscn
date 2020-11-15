@@ -29,3 +29,5 @@ position = Vector2( 501.915, 1282.39 )
 [node name="AudioPlayers" type="Node2D" parent="."]
 
 [node name="Victory" type="AudioStreamPlayer" parent="AudioPlayers"]
+
+[node name="Theme" type="AudioStreamPlayer" parent="AudioPlayers"]

@@ -4,8 +4,7 @@
 [ext_resource path="res://Mayan/SubElements/Arme_Lance_001.png" type="Texture" id=2]
 [ext_resource path="res://Mayan/Guard.gd" type="Script" id=3]
 
-
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "GuardIdle"
 length = 2.0
 loop = true
@@ -154,8 +153,7 @@ tracks/11/keys = {
 "values": [ 11.9082, 25.0384 ]
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "GuardRunning"
+[sub_resource type="Animation" id=2]
 length = 1.5
 loop = true
 tracks/0/type = "value"
@@ -333,5 +331,9 @@ scale = Vector2( 0.226574, 0.226574 )
 texture = ExtResource( 2 )
 
 [node name="AnimationPlayer" parent="." index="3"]
-anims/GuardIdle = SubResource( 2 )
-anims/GuardRunning = SubResource( 1 )
+anims/GuardIdle = SubResource( 1 )
+anims/GuardRunning = SubResource( 2 )
+
+[node name="AudioPlayers" type="Node2D" parent="." index="5"]
+
+[node name="Throw" type="AudioStreamPlayer" parent="AudioPlayers" index="0"]
