@@ -70,9 +70,9 @@ func _get_angriness(state):
 		furthest_distance_ever *= CALM_DOWN
 		
 func _turn_color():
-	self.modulate.g = 1.0 - min(1.0, angriness)
-	self.modulate.b = 1.0 - min(1.0, angriness)
-	self.modulate.r = max(0.5, min(1.0, 2.0 - angriness))
+	self.modulate.g = 1.0 - min(0.9, angriness)
+	self.modulate.b = 1.0 - min(0.9, angriness)
+	self.modulate.r = max(0.9, min(1.0, 2.0 - angriness))
 	
 	
 func _friction_force(state):
