@@ -22,7 +22,8 @@ func _ready():
 	reachableObjectsArea.connect("body_entered", self, "_pickable_item_entered_area")
 
 func _pickable_item_entered_area(item):
-	_pick_item(item)
+	if !is_dead:
+		_pick_item(item)
 
 func _pick_item(item: Node2D):
 	emit_signal("player_picked")
@@ -34,6 +35,7 @@ func _pick_item(item: Node2D):
 	item.visible = false
 
 func _drop_item():
+	print("etbah")
 	picked_offrande.visible = false
 	ACCELERATION = 7000
 	MAX_SPEED = 400
@@ -55,6 +57,7 @@ func _die():
 	if !is_dead:
 		animation_player.play("BearDeath")
 		is_dead = true
+		_drop_item()
 		emit_signal("player_died")
 
 
