@@ -5,6 +5,7 @@ const LEVEL_PATHS = [
 	"res://Levels/LevelA.tscn",
 	"res://Levels/LevelB.tscn",
 	"res://Levels/LevelC.tscn",
+	"res://Levels/LevelD.tscn",
 ]
 
 onready var endOfGameLabel = $Gui/EndOfGameLabel
