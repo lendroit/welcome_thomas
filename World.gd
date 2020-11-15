@@ -1,5 +1,6 @@
 extends Node2D
 
+const STARTING_LEVEL = 0
 const LEVEL_PATHS = [
 	"res://Levels/LevelA.tscn",
 	"res://Levels/LevelB.tscn",
@@ -9,11 +10,11 @@ const LEVEL_PATHS = [
 onready var endOfGameLabel = $Gui/EndOfGameLabel
 onready var replayButton = $Gui/EndOfGameLabel/Button
 
-var current_level = 0
+var current_level = STARTING_LEVEL
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_connect_level()
+	_deferred_instanciate_level(LEVEL_PATHS[current_level])
 	replayButton.connect("pressed", self, "_restart_game")
 
 func _connect_level():
