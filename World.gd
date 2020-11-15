@@ -15,9 +15,12 @@ var current_level = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	_connect_level()
+	replayButton.connect("pressed", self, "_restart_game")
+
+func _connect_level():
 	$Level.connect('player_won', self, "_player_won")
 	$Level.connect('player_died', self, "_player_died")
-	replayButton.connect("pressed", self, "_restart_game")
 
 func _player_won():
 	_next_level()
@@ -46,8 +49,7 @@ func _next_level():
 	self.remove_child(level)
 	add_child(new_level.instance())
 	
-	# FIXME nasty hack to reconnect Level to signals
-	_ready()
+	_connect_level()
 
 func _game_end():
 	print("BRAVO")
