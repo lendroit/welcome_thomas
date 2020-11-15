@@ -7,8 +7,8 @@ const LEVEL_PATHS = [
 	"res://Levels/LevelC.tscn",
 ]
 
-onready var endOfGameLabel = $Gui/EndOfGameLabel
-onready var replayButton = $Gui/EndOfGameLabel/Button
+onready var endOfGameLabel = $Gui/PlayerWonInterface
+onready var replayButton = $Gui/PlayerWonInterface/ReplayButton
 
 var current_level = STARTING_LEVEL
 
