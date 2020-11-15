@@ -7,6 +7,7 @@
 script = ExtResource( 2 )
 
 [node name="Exclamation1" type="Sprite" parent="."]
+visible = false
 position = Vector2( 5.72205e-06, -12.255 )
 rotation = 0.130576
 scale = Vector2( 0.0734447, 0.0679225 )
@@ -14,6 +15,7 @@ texture = ExtResource( 1 )
 offset = Vector2( 150, -200 )
 
 [node name="Exclamation2" type="Sprite" parent="."]
+visible = false
 position = Vector2( 10.7037, -7.91143 )
 rotation = 0.518331
 scale = Vector2( 0.0734447, 0.0679225 )
@@ -21,6 +23,7 @@ texture = ExtResource( 1 )
 offset = Vector2( 150, -200 )
 
 [node name="Exclamation3" type="Sprite" parent="."]
+visible = false
 position = Vector2( -13.0306, -13.0306 )
 rotation = -0.191081
 scale = Vector2( 0.0734447, 0.0679225 )
