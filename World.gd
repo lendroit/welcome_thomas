@@ -15,8 +15,6 @@ var current_level = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-#	dropOffrandeArea.connect('body_entered', self, "_body_entered_drop_zone")
-#	player.connect("player_picked", self, "_treasure_got_picked")
 	$Level.connect('player_won', self, "_player_won")
 	$Level.connect('player_died', self, "_player_died")
 	replayButton.connect("pressed", self, "_restart_game")
@@ -47,6 +45,8 @@ func _next_level():
 	
 	self.remove_child(level)
 	add_child(new_level.instance())
+	
+	# FIXME nasty hack to reconnect Level to signals
 	_ready()
 
 func _game_end():
