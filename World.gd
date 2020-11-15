@@ -9,6 +9,8 @@ const LEVEL_PATHS = [
 
 onready var player_won_interface = $Gui/PlayerWonInterface
 onready var replay_button = $Gui/PlayerWonInterface/ReplayButton
+onready var player_died_interface = $Gui/PlayerDiedInterface
+onready var replay_button_2 = $Gui/PlayerDiedInterface/ReplayButton
 
 var current_level = STARTING_LEVEL
 
@@ -16,6 +18,7 @@ var current_level = STARTING_LEVEL
 func _ready():
 	_deferred_instanciate_level(LEVEL_PATHS[current_level])
 	replay_button.connect("pressed", self, "_restart_game")
+	replay_button_2.connect("pressed", self, "_restart_game")
 
 func _connect_level():
 	$Level.connect('player_won', self, "_player_won")
@@ -25,11 +28,11 @@ func _player_won():
 	_next_level()
 
 func _player_died():
-	player_won_interface.text = 'OHH !'
-	player_won_interface.visible = true
+	player_died_interface.visible = true
 
 func _restart_game():
 	player_won_interface.visible = false
+	player_died_interface.visible = false
 	_deferred_instanciate_level(LEVEL_PATHS[current_level])
 
 # Necessary to fix an error when this is called from a signal
