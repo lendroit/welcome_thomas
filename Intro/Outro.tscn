@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Intro/Felicitations.png" type="Texture" id=1]
 [ext_resource path="res://Intro/Outro.gd" type="Script" id=2]
-[ext_resource path="res://assets/Sounds/victory_session.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/Sounds/victory_final_session.wav" type="AudioStream" id=3]
 
 [node name="Outro" type="Control"]
 anchor_right = 1.0
