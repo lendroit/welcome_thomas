@@ -27,6 +27,10 @@ func _connect_level():
 	$Level.connect('player_died', self, "_player_died")
 
 func _player_won():
+	var current_level_is_last_level = (current_level == LEVEL_PATHS.size() - 1)
+	if current_level_is_last_level:
+		_game_end()
+		return
 	self.remove_child($Level)
 	player_won_interface.visible = true
 
@@ -52,10 +56,6 @@ func _instanciate_level(level_path: String):
 func _next_level():
 	player_won_interface.visible = false
 	current_level += 1
-
-	if current_level >= LEVEL_PATHS.size():
-		_game_end()
-		return
 	
 	_deferred_instanciate_level(LEVEL_PATHS[current_level])
 
