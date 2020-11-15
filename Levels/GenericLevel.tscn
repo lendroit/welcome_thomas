@@ -152,4 +152,4 @@ position = Vector2( 517.162, 1116.9 )
 
 [node name="Mayans" type="YSort" parent="Elements"]
 
-[node name="Trees" type="YSort" parent="Elements"]
+[node name="Obstacles" type="YSort" parent="Elements"]
