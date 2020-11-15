@@ -1,14 +1,15 @@
 extends KinematicBody2D
 
-export (int) var speed = 800
 export (int) var push = 100
 var ACCELERATION = 7000
 var MAX_SPEED = 400
+var OFFRANDE_MAX_SPEED = 300
 var FRICTION = 10000
 
 var velocity = Vector2.ZERO
 var item_held = null
 var is_dead = false
+var current_max_speed = MAX_SPEED
 
 onready var reachableObjectsArea = $ReachableObjectsArea
 onready var animation_player = $AnimationPlayer
@@ -29,7 +30,7 @@ func _pick_item(item: Node2D):
 	emit_signal("player_picked")
 	picked_offrande.visible = true
 	ACCELERATION = 2500
-	MAX_SPEED = 200
+	current_max_speed = OFFRANDE_MAX_SPEED
 	FRICTION = 2000
 	item_held = item
 	item.visible = false
@@ -38,7 +39,7 @@ func _drop_item():
 	print("etbah")
 	picked_offrande.visible = false
 	ACCELERATION = 7000
-	MAX_SPEED = 400
+	current_max_speed = MAX_SPEED
 	FRICTION = 10000
 
 	if item_held:
@@ -76,7 +77,7 @@ func _physics_process(delta):
 		input_vector = input_vector.normalized()
 
 	if input_vector != Vector2.ZERO:
-		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
+		velocity = velocity.move_toward(input_vector * current_max_speed, ACCELERATION * delta)
 		animation_player.play("BearWalks")
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
