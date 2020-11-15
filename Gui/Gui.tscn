@@ -1,10 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://button_font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://assets/font_big.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Mayan.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://Gui/NextLevelButton.gd" type="Script" id=4]
-[ext_resource path="res://Gui/ReplayButton.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 128
@@ -42,7 +40,6 @@ margin_right = 44.7328
 margin_bottom = 121.687
 custom_fonts/font = ExtResource( 1 )
 text = "Continuer"
-script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -88,7 +85,6 @@ margin_right = 34.0
 margin_bottom = 65.5
 custom_fonts/font = ExtResource( 1 )
 text = "Rejouer"
-script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
