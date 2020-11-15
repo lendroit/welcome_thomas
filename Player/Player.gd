@@ -16,6 +16,19 @@ var impact_sounds = [
 	preload("res://assets/Sounds/impact_03_session.wav"),
 ]
 
+
+var death_sounds = [
+	preload("res://assets/Sounds/death_01_session.wav"),
+	preload("res://assets/Sounds/death_02_session.wav"),
+	preload("res://assets/Sounds/death_03_session.wav"),
+	preload("res://assets/Sounds/death_04_session.wav"),
+	preload("res://assets/Sounds/death_05_session.wav"),
+	preload("res://assets/Sounds/death_06_session.wav"),
+	preload("res://assets/Sounds/death_07_session.wav"),
+	preload("res://assets/Sounds/death_08_session.wav"),
+	preload("res://assets/Sounds/death_09_session.wav"),
+]
+
 onready var reachableObjectsArea = $ReachableObjectsArea
 onready var animation_player = $AnimationPlayer
 onready var picked_offrande = $PickedOffrande
@@ -63,6 +76,7 @@ func has_been_hit(body):
 
 func _die():
 	if !is_dead:
+		_play_death_sound()
 		animation_player.play("BearDeath")
 		is_dead = true
 		_drop_item()
@@ -76,7 +90,6 @@ func _physics_process(delta):
 	var input_vector = Vector2.ZERO
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
-
 
 	if input_vector.length() > 1:
 		input_vector = input_vector.normalized()
@@ -99,4 +112,9 @@ func _physics_process(delta):
 func _play_hit_sound():
 	var random_index = randi()%impact_sounds.size()
 	music.stream = impact_sounds[random_index]
+	music.play()
+
+func _play_death_sound():
+	var random_index = randi()%death_sounds.size()
+	music.stream = death_sounds[random_index]
 	music.play()
